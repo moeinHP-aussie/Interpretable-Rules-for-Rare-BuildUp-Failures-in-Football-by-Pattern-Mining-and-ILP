@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<title>فازبندی اجرایی و تسک‌بندی پروژه — نسخه ۲.۰</title>
+<style>
+  body {
+    font-family: "Vazirmatn", "Vazir", "IRANSans", "Tahoma", "Segoe UI", "FreeSerif", "DejaVu Sans", sans-serif;
+    direction: rtl;
+    font-size: 16px;
+    line-height: 2;
+    color: #1c1c1c;
+    padding: 24px 20px;
+    margin: 0 auto;
+    max-width: 900px;
+    background: #ffffff;
+  }
+  h1 {
+    font-size: 22px;
+    color: #0b3d2e;
+    border-bottom: 3px solid #0b3d2e;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 18px;
+    color: #0b3d2e;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #c9c9c9;
+    padding-bottom: 6px;
+  }
+  h3 {
+    font-size: 15px;
+    color: #1a1a1a;
+    background: #f2f6f4;
+    border-right: 4px solid #0b3d2e;
+    padding: 8px 12px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+  }
+  p {
+    text-align: justify;
+    margin: 8px 0;
+  }
+  strong {
+    color: #0b3d2e;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #d5d5d5;
+    margin: 26px 0;
+  }
+  blockquote {
+    background: #fbf6e9;
+    border-right: 4px solid #c9a227;
+    margin: 14px 0;
+    padding: 10px 16px;
+    border-radius: 3px;
+  }
+  blockquote p {
+    margin: 4px 0;
+  }
+  blockquote ul {
+    margin: 6px 0;
+  }
+  ul, ol {
+    padding-right: 24px;
+    padding-left: 6px;
+    margin: 8px 0;
+  }
+  li {
+    margin: 4px 0;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 15px;
+  }
+  th, td {
+    border: 1px solid #c9c9c9;
+    padding: 7px 10px;
+    text-align: right;
+    vertical-align: top;
+  }
+  th {
+    background: #0b3d2e;
+    color: #ffffff;
+  }
+  tr:nth-child(even) td {
+    background: #f7f9f8;
+  }
+  code {
+    font-family: "DejaVu Sans Mono", monospace;
+    background: #eef1ef;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    direction: ltr;
+    unicode-bidi: embed;
+  }
+  pre.code-block {
+    background: #1e2723;
+    color: #e6efe9;
+    padding: 12px 16px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 10px 0;
+    direction: ltr;
+    text-align: left;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  pre.code-block code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+  .cover {
+    text-align: center;
+    padding: 60px 0 40px;
+    border-bottom: 2px solid #e5e5e5;
+    margin-bottom: 30px;
+  }
+  .cover h1 {
+    border: none;
+    font-size: 30px;
+    margin-bottom: 18px;
+  }
+  .cover .subtitle {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 40px;
+  }
+  .cover .meta {
+    font-size: 13px;
+    color: #666;
+    margin-top: 60px;
+    line-height: 2;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>فازبندی اجرایی و تسک‌بندی پروژه</h1>
+  <div class="subtitle">سیستم آنالیز تاکتیکی نورو-سمبلیک — از سند فنی تا اجرا</div>
+  <div class="meta">
+    نسخه ۲.۰ — بازبینی‌شده پس از مرور نسخه ۱.۰<br>
+    پیش‌نیاز: سند فنی نسخه ۲.۰ (تأییدشده)
+  </div>
+</div>
+
+<p><strong>نسخه:</strong> ۲.۰ — بازبینی‌شده پس از مرور نسخه ۱.۰
+<strong>پیش‌نیاز:</strong> سند فنی نسخه ۲.۰ (تأییدشده)
+<strong>نحوه استفاده:</strong> هر فاز شامل چند تسک است. هر تسک یک معیار پذیرش مشخص و یک دستور تست pytest دارد. تسک بعدی را فقط بعد از سبز شدن تست تسک قبلی شروع کنید.</p>
+<blockquote>
+<p><strong>تغییرات کلیدی نسبت به نسخه ۱.۰:</strong></p>
+<ul>
+<li>تسک جدید ۲.۴ برای طراحی صریح استراتژی Negative Sampling (پیش از فاز ۴ و ۵، نه ضمنی در فاز ۵)</li>
+<li>تسک جدید ۴.۰ برای ساخت مجموعه نمونه‌های Expert-labeled (پیش‌نیاز تسک‌های ۴.۱ تا ۴.۳)</li>
+<li>روشن‌سازی صریح در فاز ۳/۴ درباره اینکه Predicateهای هندسی به چه شکل در bk.pl می‌نشینند</li>
+<li>تسک جدید ۲.۲ب برای عملیاتی‌کردن تعریف "پیامد منفی" (بخش ۲.۷ سند فنی) از همان فاز برچسب‌گذاری</li>
+<li>معیار توقف/بازگشت صریح در تسک ۵.۲ و ۵.۳ (مرتبط با ریسک ۱ سند فنی)</li>
+<li>تسک جدید ۵.۰ برای Smoke Test کوچک Popper پیش از اجرای روی یک بازی کامل</li>
+<li>تسک جدید ۶.۰ برای Hold-out درون‌فصلی (ریسک ۶ سند فنی — Overfitting)</li>
+<li>تسک ۶.۲ (Lift) اصلاح‌شده تا به یک الگوی synthetic نیز متکی باشد، نه فقط ظهور تصادفی در داده</li>
+<li>تسک جدید ۵.۴ — چک‌پوینت رسمی بازخورد فاز ۴ ↔ فاز ۵ (به‌جای صرفاً یک یادداشت متنی، اکنون معیار پذیرش و تست مستقل دارد)</li>
+</ul>
+</blockquote>
+<hr />
+<h2>نمای کلی فازها</h2>
+<table>
+<thead>
+<tr>
+<th>فاز</th>
+<th>عنوان</th>
+<th>خروجی نهایی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰</td>
+<td>راه‌اندازی محیط و زیرساخت</td>
+<td>محیط کاری آماده، تست اتصال به داده</td>
+</tr>
+<tr>
+<td>۱</td>
+<td>بارگذاری و آماده‌سازی داده خام</td>
+<td>جدول SPADL + فریم‌های 360 برای تمام بازی‌های بارسا در فصل ۲۰۲۰/۲۱</td>
+</tr>
+<tr>
+<td>۲</td>
+<td>تفکیک سکانس‌های Build-up + طراحی Negative Sampling</td>
+<td>مجموعه سکانس‌های برچسب‌خورده + استراتژی نمونه‌های منفی مستند</td>
+</tr>
+<tr>
+<td>۳</td>
+<td>ساخت لایه Rule-based Feature Extractor</td>
+<td>فایل Prolog Facts تولیدشده از داده</td>
+</tr>
+<tr>
+<td>۴</td>
+<td>فرمول‌بندی دانش تاکتیکی (bk.pl مشترک)</td>
+<td>bk.pl کامل با مشارکت مستقیم شما</td>
+</tr>
+<tr>
+<td>۵</td>
+<td>تعریف بایاس و اجرای Popper (با چک‌پوینت بازخورد رسمی به فاز ۴)</td>
+<td>اولین اجرای موفق ILP با قوانین خام خروجی</td>
+</tr>
+<tr>
+<td>۶</td>
+<td>فیلتر، ارزیابی، Hold-out و تفسیر قوانین</td>
+<td>قوانین نهایی با Support/Confidence/Lift/Hold-out</td>
+</tr>
+<tr>
+<td>۷</td>
+<td>نمایش بصری و گزارش نهایی</td>
+<td>گزارش قابل‌فهم با نقشه زمین برای هر الگو</td>
+</tr>
+<tr>
+<td>۸</td>
+<td>مستندسازی و بسته‌بندی MVP</td>
+<td>جمع‌بندی، مستندات، آماده برای فاز توسعه</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>فاز ۰ — راه‌اندازی محیط و زیرساخت</h2>
+<h3>تسک ۰.۱ — راه‌اندازی پروژه Python و مدیریت پکیج</h3>
+<p><strong>کار:</strong> نصب <code>uv</code>، ساخت پروژه، تعریف <code>pyproject.toml</code> با وابستگی‌های اصلی (statsbombpy, socceraction, kloppy, pandas, numpy, mplsoccer, pytest).
+<strong>معیار پذیرش:</strong> دستور <code>uv sync</code> بدون خطا اجرا شود و تمام پکیج‌ها import شوند.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_core_imports():
+    import statsbombpy, socceraction, pandas, numpy, mplsoccer
+    assert True
+</code></pre>
+<h3>تسک ۰.۲ — نصب و تست زنجیره Prolog/ILP</h3>
+<p><strong>کار:</strong> نصب SWI-Prolog، Clingo، و Popper (طبق مستندات رسمی Popper). تست اجرای یک مثال نمونه‌ی پیش‌فرض Popper (مثال‌های آموزشی repo خودش).
+<strong>معیار پذیرش:</strong> مثال نمونه Popper بدون خطا اجرا شود و خروجی قانون تولید کند.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_popper_installed():
+    import subprocess
+    result = subprocess.run([&quot;uv&quot;, &quot;run&quot;, &quot;popper.py&quot;, &quot;examples/iggp-rps-next-score&quot;], capture_output=True)
+    assert result.returncode == 0
+</code></pre>
+<p><strong>یادداشت اصلاحی:</strong> دستور تست نسخه ۱.۰ (<code>python -m popper --help</code>) با نحوه واقعی اجرای Popper طبق README رسمی (<code>uv run popper.py &lt;input dir&gt;</code>) هم‌خوانی نداشت؛ در این نسخه اصلاح شد.</p>
+<h3>تسک ۰.۳ — تست دسترسی به دیتاست هدف</h3>
+<p><strong>کار:</strong> با statsbombpy، اتصال به StatsBomb Open Data و دریافت لیست بازی‌های بارسلونا در <code>competition_id=11, season_id=90</code>.
+<strong>معیار پذیرش:</strong> لیست بازی‌ها دریافت شود و شامل حداقل ۲۰ بازی بارسلونا باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_barca_matches_available():
+    from statsbombpy import sb
+    matches = sb.matches(competition_id=11, season_id=90)
+    barca = matches[(matches['home_team'] == 'Barcelona') | (matches['away_team'] == 'Barcelona')]
+    assert len(barca) &gt;= 20
+</code></pre>
+<h3>تسک ۰.۴ — تست دسترسی به داده 360</h3>
+<p><strong>کار:</strong> برای حداقل یک بازی بارسا، بررسی وجود و بارگذاری موفق داده 360 (<code>sb.frames</code>).
+<strong>معیار پذیرش:</strong> حداقل یک بازی با داده 360 کامل پیدا و بارگذاری شود.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_360_data_available_for_at_least_one_match(barca_match_ids):
+    from statsbombpy import sb
+    found = False
+    for match_id in barca_match_ids:
+        try:
+            frames = sb.frames(match_id=match_id)
+            if len(frames) &gt; 0:
+                found = True
+                break
+        except Exception:
+            continue
+    assert found
+</code></pre>
+<hr />
+<h2>فاز ۱ — بارگذاری و آماده‌سازی داده خام</h2>
+<h3>تسک ۱.۱ — دانلود و کش کردن داده خام تمام بازی‌های بارسا</h3>
+<p><strong>کار:</strong> اسکریپت <code>load_raw_data.py</code> که Event + Lineup + 360 تمام بازی‌های بارسا در آن فصل را دانلود و به‌صورت محلی (Parquet/JSON) کش می‌کند تا هر بار از اینترنت نخواند.
+<strong>معیار پذیرش:</strong> فایل‌های کش‌شده برای همه بازی‌ها ایجاد شوند؛ اجرای دوم اسکریپت از کش بخواند نه از اینترنت.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_all_matches_cached(barca_match_ids, cache_dir):
+    for match_id in barca_match_ids:
+        assert (cache_dir / f&quot;events_{match_id}.parquet&quot;).exists()
+</code></pre>
+<h3>تسک ۱.۲ — تبدیل Event Data به فرمت SPADL</h3>
+<p><strong>کار:</strong> با socceraction، تبدیل داده خام هر بازی به جدول SPADL استاندارد.
+<strong>معیار پذیرش:</strong> جدول SPADL برای هر بازی دارای ستون‌های الزامی (player_id, team_id, action_type, start_x, start_y, end_x, end_y, result) باشد و تعداد ردیف‌ها با تعداد Eventهای خام هم‌خوانی معقول داشته باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_spadl_schema(sample_spadl_df):
+    required_cols = {&quot;player_id&quot;,&quot;team_id&quot;,&quot;type_name&quot;,&quot;start_x&quot;,&quot;start_y&quot;,&quot;end_x&quot;,&quot;end_y&quot;,&quot;result_name&quot;}
+    assert required_cols.issubset(sample_spadl_df.columns)
+    assert len(sample_spadl_df) &gt; 0
+</code></pre>
+<h3>تسک ۱.۳ — پیوند فریم‌های 360 به رخدادهای SPADL</h3>
+<p><strong>کار:</strong> merge کردن هر ردیف SPADL با فریم 360 متناظرش (بر اساس event_id مشترک)، طوری‌که موقعیت بازیکنان بدون توپ در لحظه هر اکشن قابل دسترسی باشد.
+<strong>معیار پذیرش:</strong> حداقل ۷۰٪ از اکشن‌های Build-up (پاس/دریبل) دارای فریم 360 متناظر باشند (باقی به‌دلیل محدودیت پوشش دوربین طبیعی است).
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_360_merge_coverage(merged_df):
+    build_up_actions = merged_df[merged_df[&quot;type_name&quot;].isin([&quot;pass&quot;, &quot;dribble&quot;])]
+    coverage = build_up_actions[&quot;freeze_frame&quot;].notna().mean()
+    assert coverage &gt;= 0.70
+</code></pre>
+<h3>تسک ۱.۴ — تعریف هویت و نقش بازیکنان بارسا</h3>
+<p><strong>کار:</strong> ساخت جدول مرجع <code>players_reference</code> شامل شناسه هویتی (<code>player_identity</code>) و نقش تاکتیکی (<code>has_role</code>) هر بازیکن اصلی بارسا در آن فصل (طبق بخش ۲.۶ سند فنی).
+<strong>معیار پذیرش:</strong> جدول شامل تمام بازیکنانی باشد که در حداقل ۵ بازی آن فصل حضور داشته‌اند؛ هر بازیکن دقیقاً یک نقش اصلی داشته باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_players_reference_complete(players_reference_df, spadl_all_matches):
+    frequent_players = spadl_all_matches[&quot;player_id&quot;].value_counts()
+    frequent_players = frequent_players[frequent_players &gt;= 5].index
+    assert set(frequent_players).issubset(set(players_reference_df[&quot;player_id&quot;]))
+</code></pre>
+<hr />
+<h2>فاز ۲ — تفکیک سکانس‌های Build-up + طراحی Negative Sampling</h2>
+<h3>تسک ۲.۱ — تعریف قاعده شروع/پایان یک سکانس Build-up</h3>
+<p><strong>کار:</strong> پیاده‌سازی <code>sequence_builder.py</code> — منطقی که مشخص می‌کند یک سکانس Build-up از کجا شروع و کجا تمام می‌شود (مثلاً از دریافت توپ توسط دروازه‌بان/مدافع تا خروج از یک‌سوم دفاعی یا از دست دادن توپ).
+<strong>معیار پذیرش:</strong> روی حداقل ۳ بازی نمونه اجرا شود و سکانس‌هایی با طول منطقی (نه ۱ اکشنی، نه کل نیمه) تولید کند.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_sequence_length_reasonable(sample_sequences):
+    lengths = [len(seq) for seq in sample_sequences]
+    assert all(2 &lt;= l &lt;= 25 for l in lengths)
+</code></pre>
+<h3>تسک ۲.۲ — تعریف عملیاتی "پیامد منفی" و برچسب‌گذاری سکانس‌ها</h3>
+<p><strong>کار:</strong> پیش از برچسب‌گذاری، طبق بخش ۲.۷ سند فنی («Target روی پیامد، نه صرف تکرار»)، یک تعریف دقیق و مستند از "پیامد منفی" بنویسید (مثلاً: از دست دادن توپ در ثانیه‌های X بعد از سکانس، در ناحیه Y از زمین، منجر به شوت/موقعیت حریف). سپس هر سکانس را طبق این تعریف مشخص‌شده برچسب بزنید.
+<strong>معیار پذیرش:</strong> تعریف "پیامد منفی" در یک سند کوتاه مستقل مکتوب شده و شامل شرایط دقیق (نه توصیف کیفی مبهم) باشد؛ هر سکانس دقیقاً یک برچسب داشته باشد؛ نسبت مثبت به منفی به‌گونه‌ای نباشد که یک طرف کمتر از ۱۰٪ کل باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_label_balance(labeled_sequences_df):
+    ratio = labeled_sequences_df[&quot;label&quot;].value_counts(normalize=True)
+    assert ratio.min() &gt;= 0.10
+
+def test_negative_outcome_definition_documented(outcome_definition_doc):
+    # سند تعریف باید شرایط عددی/مکانی مشخص داشته باشد، نه فقط توضیح کیفی
+    assert outcome_definition_doc[&quot;has_explicit_criteria&quot;] is True
+</code></pre>
+<p><strong>یادداشت اصلاحی:</strong> این تسک از نسخه ۱.۰ گسترش یافته تا مفهوم بخش ۲.۷ سند فنی (تفکیک الگوی سالم از مضر بر مبنای تعریف Target) را از همین مرحله عملیاتی کند، نه اینکه تا فاز ۶ (Lift) به تعویق بیفتد.</p>
+<h3>تسک ۲.۳ — استخراج سکانس‌های چندبازیکنی نامزد (۲ تا ۳ نفره)</h3>
+<p><strong>کار:</strong> برای هر سکانس، شناسایی زیرمجموعه‌های ۲ تا ۳ بازیکنی که در آن سکانس تعامل مستقیم داشته‌اند (پاس، پوشش، حمایت) — طبق بخش ۲.۵ سند فنی — تا بعداً به Popper داده شوند.
+<strong>معیار پذیرش:</strong> برای حداقل ۵۰٪ سکانس‌ها، حداقل یک زیرمجموعه دو‌نفره معتبر استخراج شود.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_multi_player_subsets_extracted(sequences_with_subsets):
+    has_subset = sequences_with_subsets[&quot;player_pairs&quot;].apply(lambda x: len(x) &gt; 0)
+    assert has_subset.mean() &gt;= 0.50
+</code></pre>
+<h3>تسک ۲.۴ — طراحی و مستندسازی استراتژی Negative Sampling برای exs.pl (جدید)</h3>
+<p><strong>کار:</strong> طبق ریسک ۲ سند فنی («نمونه‌های منفی نامعتبر → قوانین کاذب»)، پیش از ورود به فاز ۴ و ۵، استراتژی دقیق انتخاب نمونه‌های منفی برای <code>exs.pl</code> را تعریف کنید. این شامل: (الف) نمونه‌های منفی باید از نظر شرایط زمینه‌ای (فشار، ناحیه زمین، نوع اکشن) قابل‌مقایسه با نمونه‌های مثبت باشند، نه انتخاب تصادفی کور از کل دیتاست؛ (ب) مستندسازی این‌که چند نمونه منفی به ازای هر نمونه مثبت انتخاب می‌شود و چرا.
+<strong>معیار پذیرش:</strong> سند استراتژی Negative Sampling نوشته و تأیید شود؛ روی یک نمونه کوچک (یک بازی)، بررسی شود که نمونه‌های منفی انتخاب‌شده از نظر توزیع ویژگی‌های زمینه‌ای (مثلاً ناحیه زمین) با نمونه‌های مثبت هم‌پوشانی معنادار دارند (نه کاملاً واگرا و نه کاملاً یکسان).
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_negative_samples_context_comparable(pos_examples_df, neg_examples_df):
+    # میانگین موقعیت مکانی نمونه‌های منفی نباید به‌طرز افراطی با مثبت‌ها متفاوت باشد
+    pos_zone_dist = pos_examples_df[&quot;zone&quot;].value_counts(normalize=True)
+    neg_zone_dist = neg_examples_df[&quot;zone&quot;].value_counts(normalize=True)
+    overlap = min(pos_zone_dist.get(z, 0), neg_zone_dist.get(z, 0)) 
+    total_overlap = sum(min(pos_zone_dist.get(z, 0), neg_zone_dist.get(z, 0)) for z in pos_zone_dist.index)
+    assert total_overlap &gt;= 0.4  # حداقل همپوشانی توزیع، آستانه قابل‌تنظیم بعد از دیدن داده واقعی
+</code></pre>
+<p><strong>چرا این تسک اضافه شد:</strong> در نسخه ۱.۰، فایل <code>exs_all.pl</code> در فاز ۵ (تسک ۵.۱) به‌طور ضمنی فرض شده بود که از قبل آماده است، بدون این‌که هیچ تسکی مشخص کند با چه منطقی نمونه‌های منفی انتخاب می‌شوند. با توجه به این‌که سند فنی صریحاً این را «حساس‌ترین بخش ILP» می‌داند، این باید یک تسک مستقل با معیار پذیرش روشن باشد، نه یک فرض ضمنی.</p>
+<hr />
+<h2>فاز ۳ — ساخت لایه Rule-based Feature Extractor</h2>
+<blockquote>
+<p><strong>یادداشت روشن‌سازی (جدید):</strong> Predicateهای هندسی این فاز (<code>half_space</code>, <code>zone14</code>, <code>under_pressure</code>) به‌صورت <strong>توابع Python</strong> پیاده‌سازی می‌شوند و خروجی‌شان به شکل <strong>Fact ثابت</strong> (مثلاً <code>at_zone(p1, seq5, right_half_space).</code>) در فایل <code>.pl</code> دامپ می‌شود — نه به شکل یک Prolog rule زنده و قابل‌فراخوانی مجدد در bk.pl. این یک تصمیم معماری آگاهانه‌ است (چون به بخش ۲.۲ سند فنی، لایه عصبی/محاسباتی MVP در Python پیاده می‌شود)، اما باید در bk.pl هم به‌وضوح مستند شود که این Predicateها «از پیش محاسبه‌شده» هستند، تا در فاز ۴ با Predicateهای تاکتیکی (که rule واقعی Prolog‌اند) اشتباه گرفته نشوند.</p>
+</blockquote>
+<h3>تسک ۳.۱ — پیاده‌سازی Predicateهای هندسی پایه</h3>
+<p><strong>کار:</strong> توابع Python برای محاسبه <code>half_space</code>, <code>zone14</code>, <code>under_pressure</code> و مفاهیم مشابه از روی مختصات SPADL و فریم 360 (طبق بخش ۲.۲ و ۴.۱ سند فنی).
+<strong>معیار پذیرش:</strong> هر تابع روی حداقل ۳ ورودی دستی (مختصات شناخته‌شده) خروجی درست و منطقی بدهد (تست واحد ساده).
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_half_space_geometry():
+    assert occupies_half_space(x=70, y=15) == &quot;right_half_space&quot;
+    assert occupies_half_space(x=70, y=34) == &quot;central_channel&quot;
+</code></pre>
+<h3>تسک ۳.۲ — تولید Fact های Prolog از یک بازی نمونه</h3>
+<p><strong>کار:</strong> تبدیل خروجی توابع هندسی به فایل <code>.pl</code> واقعی با Predicateهای Prolog معتبر، برای یک بازی نمونه.
+<strong>معیار پذیرش:</strong> فایل تولیدشده در SWI-Prolog بدون خطای Syntax لود شود.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_generated_facts_load_in_prolog(facts_file_path):
+    import subprocess
+    result = subprocess.run([&quot;swipl&quot;, &quot;-g&quot;, f&quot;consult('{facts_file_path}'), halt.&quot;], capture_output=True)
+    assert result.returncode == 0
+</code></pre>
+<h3>تسک ۳.۳ — تعمیم تولید Fact به کل دیتاست</h3>
+<p><strong>کار:</strong> اجرای پایپ‌لاین فوق روی تمام بازی‌های بارسا، ادغام در یک یا چند فایل <code>.pl</code> نهایی.
+<strong>معیار پذیرش:</strong> فایل نهایی شامل Factهایی برای تمام سکانس‌های برچسب‌خورده در فاز ۲ باشد؛ تعداد Factهای هر نوع با تعداد سکانس‌های ورودی هم‌خوانی داشته باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_fact_count_matches_sequences(final_facts_file, labeled_sequences_df):
+    fact_count = count_predicate_occurrences(final_facts_file, &quot;involved_in&quot;)
+    assert fact_count == len(labeled_sequences_df)
+</code></pre>
+<hr />
+<h2>فاز ۴ — فرمول‌بندی دانش تاکتیکی مشترک (bk.pl)</h2>
+<p>این فاز، برخلاف فازهای قبل، <strong>مستلزم مشارکت مستقیم و مستمر شما</strong> است. روال هر تسک: شما مفهوم را به زبان ساده توصیف می‌کنید → با هم به Predicate منطقی تبدیل می‌کنیم → تست کوچک روی چند نمونه واقعی می‌زنیم → تأیید یا اصلاح.</p>
+<h3>تسک ۴.۰ — ساخت مجموعه نمونه‌های Expert-labeled (جدید، پیش‌نیاز تسک‌های ۴.۱ تا ۴.۳)</h3>
+<p><strong>کار:</strong> پیش از فرمول‌بندی هر مفهوم تاکتیکی، یک مجموعه‌ی مشخص از نمونه‌های واقعی (حداقل ۱۰ پاس برای Line-breaking، حداقل ۵ نمونه برای تردید، حداقل ۱۰ جفت برای supports/covers) را از داده واقعی استخراج و دستی برچسب بزنید. این مجموعه‌ها باید ذخیره و نسخه‌بندی شوند تا در تسک‌های بعدی به‌عنوان Ground Truth استفاده شوند.
+<strong>معیار پذیرش:</strong> سه فایل/جدول مجزا (<code>expert_labeled_passes</code>, <code>hesitation_labeled_samples</code>, <code>expert_labeled_pairs</code>) ساخته و ذخیره شوند؛ هر کدام حداقل به تعداد ذکرشده در تسک متناظرشان نمونه داشته باشند.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_expert_labeled_datasets_exist(expert_labeled_passes, hesitation_labeled_samples, expert_labeled_pairs):
+    assert len(expert_labeled_passes) &gt;= 10
+    assert len(hesitation_labeled_samples) &gt;= 5
+    assert len(expert_labeled_pairs) &gt;= 10
+</code></pre>
+<p><strong>چرا این تسک اضافه شد:</strong> در نسخه ۱.۰، تسک‌های ۴.۱ تا ۴.۳ به مجموعه‌های <code>expert_labeled_passes</code>، <code>hesitation_labeled_samples</code> و <code>expert_labeled_pairs</code> ارجاع می‌دادند بدون اینکه مشخص باشد این مجموعه‌ها چه زمانی و چگونه ساخته می‌شوند. این یک وابستگی پنهان بود که اکنون به‌صورت یک تسک مستقل با معیار پذیرش روشن درآمده است.</p>
+<h3>تسک ۴.۱ — فرمول‌بندی مفهوم "Line-breaking Pass"</h3>
+<p><strong>کار:</strong> تعریف مشترک اینکه یک پاس چه شرایطی داشته باشد تا "خط‌شکن" محسوب شود؛ تبدیل به قانون Prolog.
+<strong>معیار پذیرش:</strong> روی حداقل ۱۰ پاس واقعی از داده (از تسک ۴.۰)، تشخیص سیستم با تشخیص شما (به‌عنوان آنالیزور) حداقل در ۸ مورد یکسان باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_line_breaking_pass_matches_expert_labels(expert_labeled_passes):
+    predicted = [is_line_breaking(p) for p in expert_labeled_passes[&quot;pass_data&quot;]]
+    actual = expert_labeled_passes[&quot;expert_label&quot;]
+    accuracy = sum(p == a for p, a in zip(predicted, actual)) / len(actual)
+    assert accuracy &gt;= 0.8
+</code></pre>
+<h3>تسک ۴.۲ — فرمول‌بندی مفهوم "تردید/مکث تحت فشار"</h3>
+<p><strong>کار:</strong> تعریف آستانه مکث که نشان‌دهنده تردید هافبک/مدافع زیر فشار است. <strong>به‌جای یک عدد ثابت زمانی</strong>، از یک معیار نسبی استفاده شود (مثلاً درصدک زمان تصمیم‌گیری نسبت به میانگین در موقعیت‌های مشابه) تا حساسیت به سرعت کلی بازی یا شرایط خاص مسابقه کاهش یابد.
+<strong>معیار پذیرش:</strong> آستانه اولیه تعیین و روی حداقل ۵ نمونه واقعی (از تسک ۴.۰) صحت‌سنجی شود؛ علاوه‌بر این، پایداری آستانه روی حداقل دو زیرمجموعه متفاوت داده (مثلاً نیمه اول در مقابل نیمه دوم بازی‌ها) بررسی و مستند شود.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_hesitation_threshold_reasonable(hesitation_labeled_samples, threshold_percentile):
+    predicted = hesitation_labeled_samples[&quot;pause_duration&quot;] &gt; hesitation_labeled_samples[&quot;contextual_baseline_percentile&quot;]
+    assert (predicted == hesitation_labeled_samples[&quot;expert_label&quot;]).mean() &gt;= 0.7
+
+def test_threshold_stable_across_subsets(hesitation_labeled_samples_first_half, hesitation_labeled_samples_second_half, threshold_percentile):
+    acc_first = evaluate_threshold(hesitation_labeled_samples_first_half, threshold_percentile)
+    acc_second = evaluate_threshold(hesitation_labeled_samples_second_half, threshold_percentile)
+    assert abs(acc_first - acc_second) &lt;= 0.15  # پایداری معقول بین دو زیرمجموعه
+</code></pre>
+<p><strong>یادداشت اصلاحی:</strong> نسخه ۱.۰ از یک آستانه مطلق زمانی استفاده می‌کرد که به سرعت بازی/فشار مسابقه حساس است؛ در این نسخه به یک معیار نسبی تبدیل شده و یک تست پایداری اضافه شده است.</p>
+<h3>تسک ۴.۳ — فرمول‌بندی مفاهیم حمایتی/رابطه‌ای (<code>supports</code>, <code>covers</code>)</h3>
+<p><strong>کار:</strong> تعریف قوانین geometric/context-based برای اینکه چه زمانی یک بازیکن دوم "حمایت‌گر" بازیکن اول محسوب می‌شود (طبق نمونه‌های بخش ۲.۵ سند فنی).
+<strong>معیار پذیرش:</strong> روی حداقل ۱۰ نمونه دو‌نفره واقعی (از تسک ۴.۰)، تشخیص سیستم با قضاوت شما همخوانی معقول (۷۰٪+) داشته باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_support_relation_matches_expert(expert_labeled_pairs):
+    predicted = [supports(p1, p2, seq) for p1, p2, seq in expert_labeled_pairs[&quot;pairs&quot;]]
+    accuracy = sum(p == e for p, e in zip(predicted, expert_labeled_pairs[&quot;expert_label&quot;])) / len(expert_labeled_pairs)
+    assert accuracy &gt;= 0.7
+</code></pre>
+<h3>تسک ۴.۴ — تجمیع نهایی bk.pl</h3>
+<p><strong>کار:</strong> ادغام تمام Predicateهای هندسی (فاز ۳، به‌صورت Fact از پیش محاسبه‌شده) و تاکتیکی (تسک‌های ۴.۱ تا ۴.۳، به‌صورت rule واقعی Prolog) در یک فایل <code>bk.pl</code> واحد و مستند. مستندسازی باید صریحاً مشخص کند کدام Predicateها Fact ثابت و کدام‌ها Rule پویا هستند.
+<strong>معیار پذیرش:</strong> فایل کامل بدون خطا در SWI-Prolog لود شود و تمام Predicateهای موردنیاز <code>bias.pl</code> (فاز بعد) را پوشش دهد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_bkpl_loads_and_covers_required_predicates(bkpl_path, required_predicates):
+    result = load_prolog_file(bkpl_path)
+    assert result.success
+    assert required_predicates.issubset(result.defined_predicates)
+</code></pre>
+<hr />
+<h2>فاز ۵ — تعریف بایاس و اجرای Popper</h2>
+<blockquote>
+<p><strong>یادداشت معماری مهم (جدید):</strong> این فاز را <strong>خطی محض</strong> در نظر نگیرید. طبق نکته پایانی سند فنی («فرآیند تکرارشونده و مرحله‌ای به‌جای فرمول‌بندی یک‌باره»، ریسک ۷)، وقتی Popper روی bk.pl واقعی اجرا شود، معمولاً معلوم می‌شود بعضی Predicateها بیش‌ازحد کلی یا محدودند. اگر تسک ۵.۱ یا ۵.۲ نتایج بی‌کیفیت یا Timeout مکرر داد، به فاز ۴ (رفاینمنت Predicateها) برگردید — این یک شکست نیست، بخشی طبیعی از فرآیند است.</p>
+</blockquote>
+<h3>تسک ۵.۰ — Smoke Test کوچک Popper روی داده دستی (جدید)</h3>
+<p><strong>کار:</strong> پیش از اجرای Popper روی یک بازی کامل، زنجیره Popper + Clingo + SWI-Prolog را روی یک مجموعه بسیار کوچک (۵ تا ۱۰ Fact دستی‌ساخته، نه واقعی) با یک <code>bias.pl</code> حداقلی تست کنید. هدف صرفاً اطمینان از سلامت فنی زنجیره است، نه کیفیت قانون.
+<strong>معیار پذیرش:</strong> Popper روی این مجموعه کوچک در کمتر از ۳۰ ثانیه بدون خطا اجرا شود و حداقل یک قانون (حتی بی‌معنی از نظر تاکتیکی) تولید کند.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_popper_smoke_test_minimal_data():
+    result = run_popper(bk=&quot;bk_toy.pl&quot;, bias=&quot;bias_toy.pl&quot;, exs=&quot;exs_toy.pl&quot;, timeout=30)
+    assert result.completed
+    assert len(result.rules) &gt;= 1
+</code></pre>
+<p><strong>چرا این تسک اضافه شد:</strong> اجرای مستقیم روی یک بازی کامل (تسک ۵.۱ در نسخه ۱.۰) هزینه دیباگ بالایی دارد اگر مشکل از تنظیمات پایه‌ی زنجیره باشد، نه از خود داده. این تسک هزینه دیباگ را با یک آزمایش تقریباً رایگان جدا می‌کند.</p>
+<h3>تسک ۵.۱ — نوشتن <code>bias.pl</code> نسخه اول (محدود)</h3>
+<p><strong>کار:</strong> تعریف <code>head_pred</code>, <code>body_pred</code>, <code>max_vars</code>, <code>max_body</code>، و سقف تعداد بازیکنان (حداکثر ۲ برای شروع، طبق راهکار ریسک ۱ سند فنی).
+<strong>معیار پذیرش:</strong> Popper با این bias، بدون Timeout (زیر ۵ دقیقه) روی یک زیرمجموعه کوچک (یک بازی) اجرا شود.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_popper_runs_within_timeout_small_sample():
+    result = run_popper(bk=&quot;bk.pl&quot;, bias=&quot;bias.pl&quot;, exs=&quot;exs_single_match.pl&quot;, timeout=300)
+    assert result.completed
+</code></pre>
+<h3>تسک ۵.۲ — اجرای Popper روی کل دیتاست (سطح تک‌بازیکنی)</h3>
+<p><strong>کار:</strong> اجرای Popper با <code>head_pred</code> تک‌متغیره (<code>lose_possession/1</code>) روی کل مجموعه Fact.
+<strong>معیار پذیرش:</strong> حداقل یک قانون خروجی تولید شود؛ زمان اجرا مستند و قابل قبول باشد (زیر یک ساعت برای این حجم داده). <strong>معیار توقف/بازگشت:</strong> اگر اجرا Timeout بخورد یا صفر قانون تولید کند، پیش از تلاش مجدد باید <code>bias.pl</code> (کاهش max_body یا max_vars) یا <code>bk.pl</code> (ساده‌سازی Predicateهای پرهزینه) بازبینی شود — تکرار کورکورانه بدون تغییر تنظیمات مجاز نیست.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_popper_single_player_rules_generated():
+    result = run_popper(bk=&quot;bk.pl&quot;, bias=&quot;bias_single.pl&quot;, exs=&quot;exs_all.pl&quot;, timeout=3600)
+    assert len(result.rules) &gt;= 1
+</code></pre>
+<h3>تسک ۵.۳ — افزایش سقف به دو‌بازیکنی و اجرای مجدد</h3>
+<p><strong>کار:</strong> تغییر <code>head_pred</code> به دو‌متغیره (<code>lose_possession/2</code>)، افزایش سقف بازیکنان طبق بخش ۲.۵ سند فنی، اجرای مجدد.
+<strong>معیار پذیرش:</strong> اجرا در زمان معقول (مطابق تنظیم Timeout مصوب در ریسک ۱) کامل شود؛ حداقل یک قانون دو‌نفره تولید شود. <strong>معیار توقف/بازگشت:</strong> همانند تسک ۵.۲ — اگر انفجار ترکیبیاتی رخ داد (Timeout مکرر در حداقل ۲ تلاش پیاپی)، به فاز ۴ برای کاهش تعداد یا کلی‌بودن Predicateهای body_pred بازگردید، پیش از افزایش بیشتر پیچیدگی.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_popper_two_player_rules_generated():
+    result = run_popper(bk=&quot;bk.pl&quot;, bias=&quot;bias_pairwise.pl&quot;, exs=&quot;exs_all.pl&quot;, timeout=3600)
+    two_player_rules = [r for r in result.rules if r.arity == 2]
+    assert len(two_player_rules) &gt;= 1
+</code></pre>
+<h3>تسک ۵.۴ — چک‌پوینت بازخورد فاز ۴ ↔ فاز ۵ (جدید)</h3>
+<p><strong>کار:</strong> بعد از هر دو اجرای اصلی Popper (تسک ۵.۲ و ۵.۳)، صرف‌نظر از موفقیت یا شکست، یک مرور صریح و مستند از کیفیت خروجی انجام دهید: آیا قوانین تولیدشده از نظر تاکتیکی معنادارند یا صرفاً از نظر آماری صحیح‌اند؟ آیا Predicateهای bk.pl بیش‌ازحد کلی (قانون‌های بی‌معنی زیاد تولید می‌کنند) یا بیش‌ازحد محدود (هیچ قانونی تولید نمی‌شود) هستند؟ نتیجه این مرور را در یک یادداشت کوتاه ثبت کنید و تصمیم بگیرید: ادامه به فاز ۶، یا بازگشت به فاز ۴ برای رفاینمنت یک یا چند Predicate مشخص.
+<strong>معیار پذیرش:</strong> یک سند/یادداشت چک‌پوینت برای هر اجرای اصلی (۵.۲ و ۵.۳) ثبت شود که شامل: تعداد قوانین تولیدشده، ارزیابی کیفی اولیه (معنادار/نامعتبر/نامشخص) حداقل روی چند نمونه، و تصمیم صریح "ادامه" یا "بازگشت به فاز ۴ — Predicate(های) X". اگر تصمیم بازگشت باشد، تسک نباید به فاز ۶ برود تا این چک‌پوینت به‌روزرسانی و به "ادامه" تغییر یابد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_feedback_checkpoint_documented(popper_run_checkpoint):
+    assert popper_run_checkpoint[&quot;rule_count&quot;] is not None
+    assert popper_run_checkpoint[&quot;quality_assessment&quot;] in [&quot;meaningful&quot;, &quot;invalid&quot;, &quot;unclear&quot;]
+    assert popper_run_checkpoint[&quot;decision&quot;] in [&quot;proceed&quot;, &quot;return_to_phase_4&quot;]
+    if popper_run_checkpoint[&quot;decision&quot;] == &quot;return_to_phase_4&quot;:
+        assert len(popper_run_checkpoint[&quot;predicates_to_refine&quot;]) &gt; 0
+</code></pre>
+<p><strong>چرا این تسک اضافه شد:</strong> بدون یک چک‌پوینت رسمی، فرض خطی‌بودن فاز ۴→۵ به‌راحتی دوباره جا می‌افتد، چون هیچ تسکی صراحتاً از شما نمی‌خواهد کیفیت را بین دو اجرا ارزیابی و تصمیم بازگشت/ادامه را ثبت کنید. این تسک، توصیه ریسک ۷ سند فنی («فرآیند تکرارشونده») را از یک یادداشت کلی به یک گیت واقعی با معیار پذیرش تبدیل می‌کند.</p>
+<hr />
+<h2>فاز ۶ — فیلتر، ارزیابی، Hold-out و تفسیر قوانین</h2>
+<h3>تسک ۶.۰ — تفکیک Hold-out درون‌فصلی (جدید)</h3>
+<p><strong>کار:</strong> طبق ریسک ۶ سند فنی («Overfitting به سبک بازی یک تیم خاص»)، پیش از محاسبه Support/Confidence نهایی، دیتاست را به دو بخش تقسیم کنید: مثلاً ۸۰٪ بازی‌ها برای کشف قانون (فاز ۵) و ۲۰٪ بازی‌های باقی‌مانده (که Popper هرگز آن‌ها را ندیده) برای اعتبارسنجی مجدد Support/Confidence هر قانون کشف‌شده.
+<strong>معیار پذیرش:</strong> هر قانون خروجی فاز ۵ باید مقادیر Support/Confidence را هم روی داده آموزشی و هم روی Hold-out داشته باشد؛ افت شدید (مثلاً بیش از ۵۰٪) در Confidence روی Hold-out باید علامت‌گذاری شود.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_holdout_confidence_reported(rules_with_metrics):
+    for r in rules_with_metrics:
+        assert &quot;confidence_train&quot; in r and &quot;confidence_holdout&quot; in r
+        if r[&quot;confidence_train&quot;] &gt; 0:
+            drop_ratio = (r[&quot;confidence_train&quot;] - r[&quot;confidence_holdout&quot;]) / r[&quot;confidence_train&quot;]
+            r[&quot;flagged_for_review&quot;] = drop_ratio &gt; 0.5
+</code></pre>
+<p><strong>چرا این تسک اضافه شد:</strong> ریسک ۶ سند فنی به این موضوع اشاره دارد ولی هیچ تسکی در نسخه ۱.۰ آن را عملیاتی نمی‌کرد. برای MVP یک تست کامل روی فصل/تیم دیگر لازم نیست، اما حداقل یک Hold-out درون‌فصلی هزینه کمی دارد و اعتبار قوانین را تقویت می‌کند.</p>
+<h3>تسک ۶.۱ — محاسبه Support و Confidence برای هر قانون خروجی</h3>
+<p><strong>کار:</strong> پیاده‌سازی محاسبه دو معیار طبق بخش ۶ سند فنی، روی تمام قوانین خروجی فاز ۵ (روی داده آموزشی؛ نسخه Hold-out طبق تسک ۶.۰ جداگانه محاسبه می‌شود).
+<strong>معیار پذیرش:</strong> هر قانون یک مقدار Support و Confidence عددی داشته باشد؛ قوانین با Support کمتر از آستانه (۳ تا ۵) به‌صورت خودکار حذف شوند.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_support_confidence_computed_and_filtered(raw_rules_with_metrics):
+    assert all(&quot;support&quot; in r and &quot;confidence&quot; in r for r in raw_rules_with_metrics)
+    assert all(r[&quot;support&quot;] &gt;= 3 for r in raw_rules_with_metrics if r[&quot;kept&quot;])
+</code></pre>
+<h3>تسک ۶.۲ — محاسبه Lift نسبت به Baseline تیم</h3>
+<p><strong>کار:</strong> پیاده‌سازی معیار Lift طبق بخش ۲.۷ سند فنی، برای تفکیک الگوهای واقعاً پرخطر از الگوهای سالم پرتکرار.
+<strong>معیار پذیرش:</strong> (الف) روی یک الگوی <strong>synthetic (مصنوعی، ساخته‌شده دستی)</strong> با Lift نزدیک به ۱ از پیش مشخص، پیاده‌سازی محاسبه Lift مقدار درست را برگرداند؛ (ب) در صورت وجود یک الگوی شناخته‌شده سالم در داده واقعی (مثلاً کمک هافبک دفاعی)، Lift آن نیز نزدیک به ۱ باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_lift_calculation_correct_on_synthetic_case(synthetic_pattern_stats):
+    # مورد ساختگی با نرخ پیامد منفی برابر نرخ پایه تیم -&gt; Lift باید ~1 باشد
+    lift = compute_lift(synthetic_pattern_stats)
+    assert abs(lift - 1.0) &lt; 0.1
+
+def test_healthy_pattern_has_low_lift_if_present(known_healthy_pattern_stats):
+    if known_healthy_pattern_stats is not None:
+        assert known_healthy_pattern_stats[&quot;lift&quot;] &lt; 1.3
+</code></pre>
+<p><strong>یادداشت اصلاحی:</strong> تست نسخه ۱.۰ کاملاً به ظهور تصادفی یک الگوی سالم در داده واقعی وابسته بود و ممکن بود هیچ‌وقت اجرا نشود. حالا یک تست synthetic اجباری اضافه شده که مستقل از داده واقعی صحت محاسبه Lift را تضمین می‌کند؛ تست روی داده واقعی به‌صورت شرطی باقی می‌ماند.</p>
+<h3>تسک ۶.۳ — جلسه Coach Validation (تأیید انسانی)</h3>
+<p><strong>کار:</strong> مرور دستی تمام قوانین باقی‌مانده توسط شما؛ ثبت تأیید/رد هر کدام با یادداشت دلیل.
+<strong>معیار پذیرش:</strong> هر قانون خروجی این فاز دارای وضعیت مشخص (<code>approved</code> / <code>rejected</code>) و یادداشت باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_all_rules_have_validation_status(final_rules_df):
+    assert final_rules_df[&quot;validation_status&quot;].isin([&quot;approved&quot;, &quot;rejected&quot;]).all()
+</code></pre>
+<hr />
+<h2>فاز ۷ — نمایش بصری و گزارش نهایی</h2>
+<h3>تسک ۷.۱ — رسم نمونه‌ای از هر قانون تأییدشده روی نقشه زمین</h3>
+<p><strong>کار:</strong> استفاده از mplsoccer برای رسم حداقل یک نمونه واقعی از هر قانون approved، با مسیر توپ و موقعیت بازیکنان کلیدی.
+<strong>معیار پذیرش:</strong> هر قانون approved حداقل یک تصویر رسم‌شده داشته باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_visualization_exists_for_each_approved_rule(approved_rules, output_dir):
+    for rule_id in approved_rules[&quot;rule_id&quot;]:
+        assert (output_dir / f&quot;rule_{rule_id}.png&quot;).exists()
+</code></pre>
+<h3>تسک ۷.۲ — ترجمه قانون منطقی به توضیح قابل‌فهم</h3>
+<p><strong>کار:</strong> پیاده‌سازی <code>logic_translator.py</code> که هر قانون Prolog را به یک جمله فارسی/انگلیسی قابل‌فهم برای مربی تبدیل می‌کند.
+<strong>معیار پذیرش:</strong> هر قانون approved یک متن توضیحی داشته باشد که حداقل شامل بازیکن(ها)، شرایط، و پیامد باشد.
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_translation_contains_key_elements(translated_rules):
+    for t in translated_rules:
+        assert t[&quot;player_mentioned&quot;] and t[&quot;condition_mentioned&quot;] and t[&quot;outcome_mentioned&quot;]
+</code></pre>
+<h3>تسک ۷.۳ — تجمیع گزارش نهایی</h3>
+<p><strong>کار:</strong> ساخت گزارش نهایی (سند یا صفحه) شامل تمام قوانین approved، با تصویر، توضیح، و آمار (Support/Confidence/Lift/Hold-out).
+<strong>معیار پذیرش:</strong> گزارش نهایی شامل حداقل ۳ الگو باشد (طبق معیار موفقیت MVP در بخش ۱.۵ سند فنی).
+<strong>تست:</strong></p>
+<pre class="code-block" dir="ltr"><code class="language-python">def test_final_report_meets_mvp_criteria(final_report):
+    assert len(final_report[&quot;patterns&quot;]) &gt;= 3
+</code></pre>
+<hr />
+<h2>فاز ۸ — مستندسازی و بسته‌بندی MVP</h2>
+<h3>تسک ۸.۱ — مستندسازی کد و پایپ‌لاین</h3>
+<p><strong>کار:</strong> README کامل برای اجرای مجدد کل پایپ‌لاین از صفر، شامل نحوه اجرای هر فاز.
+<strong>معیار پذیرش:</strong> یک نفر ثالث (یا خود شما بعد از مدتی) بتواند صرفاً با خواندن README، پایپ‌لاین را از ابتدا اجرا کند.</p>
+<h3>تسک ۸.۲ — جمع‌بندی یافته‌ها و ثبت محدودیت‌های شناخته‌شده</h3>
+<p><strong>کار:</strong> سند کوتاه جمع‌بندی: چه الگوهایی کشف شد، کدام رد شدند و چرا، چه محدودیت‌هایی (طبق بخش ۲.۴ سند فنی درباره داده 360) روی نتایج اثر گذاشت.
+<strong>معیار پذیرش:</strong> سند شامل حداقل یک بخش صریح "محدودیت‌های این نسخه" باشد.</p>
+<h3>تسک ۸.۳ — برنامه‌ریزی اولیه فاز توسعه</h3>
+<p><strong>کار:</strong> بر اساس آنچه در MVP یاد گرفته شد (به‌خصوص سقف واقعی تعداد بازیکنان و Timeout Popper)، پیش‌نویس اهداف فاز توسعه (Set Pieces، احتمالاً Tracking Data واقعی در صورت تخصیص بودجه).
+<strong>معیار پذیرش:</strong> سند پیش‌نویس فاز توسعه آماده و برای بررسی شما ارائه شود.</p>
+<hr />
+<h2>نکته پایانی درباره نحوه استفاده از این فازبندی</h2>
+<ul>
+<li>هر تسک را به‌ترتیب انجام دهید؛ تست pytest متناظر را بنویسید و اجرا کنید؛ فقط بعد از سبز شدن تست، تسک را تیک بزنید و به بعدی بروید.</li>
+<li>فاز ۴ کندتر از بقیه پیش می‌رود چون نیازمند مشارکت مستقیم شماست — این طبیعی و پیش‌بینی‌شده است (طبق ریسک ۷ سند فنی).</li>
+<li><strong>فاز ۴ و فاز ۵ را خطی تصور نکنید.</strong> تسک ۵.۴ دقیقاً برای همین ساخته شده: بعد از هر اجرای اصلی Popper، رسماً کیفیت را ارزیابی و تصمیم "ادامه/بازگشت" را ثبت کنید. بازگشت به فاز ۴ برای رفاینمنت Predicateها بخشی طبیعی از فرآیند ILP است، نه شکست در برنامه‌ریزی.</li>
+<li>اگر در هر فاز با یک مانع غیرمنتظره مواجه شدید (مثلاً Timeout مکرر Popper، یا پوشش پایین‌تر از حد انتظار داده 360)، به‌جای پیش‌روی اجباری، به‌روزرسانی سند فنی (بخش ریسک‌ها) و بازنگری در بایاس یا دامنه توصیه می‌شود.</li>
+</ul>
+
+</body>
+</html>
