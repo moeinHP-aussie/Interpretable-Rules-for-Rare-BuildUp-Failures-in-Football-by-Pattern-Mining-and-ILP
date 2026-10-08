@@ -1,0 +1,253 @@
+{
+  "source_method": "hybrid_sequential",
+  "source_fingerprint": "57a6ea0d1aca14b0632c",
+  "instructions": "برای هر قانون: validation_status را به approved یا rejected تغییر دهید. نوشتن validation_note اختیاری است. قانون‌هایی که flags.holdout_confidence_collapsed=true دارند احتمالاً باید rejected شوند مگر دلیل قانع‌کننده‌ای برای نگه‌داشتنشان داشته باشید.",
+  "candidate_selection_warning": "قواعد با category=intermediate_candidate از نامزدهای میان‌مرحله‌ای CV انتخاب شده‌اند. کاندیداهای الگوی فولد نیز فقط در صورت وجود همتای معنایی دقیق در واژگان مدل نهایی وارد می‌شوند. امتیازهای holdout/test گزارش CV برای رتبه‌بندی استفاده شده‌اند و selection-biased هستند، نه برآورد مستقل؛ امتیاز Phase 6 نیز به‌تنهایی جای ارزیابی روی مسابقات تازه را نمی‌گیرد.",
+  "candidate_selection_warning_en": "Intermediate candidates are ranked using reported CV holdout/test evidence; this selection is biased and is not an independent estimate. Fold-local patterns are included only when their ordered signature matches the final vocabulary. Phase 6 scores are for review and do not replace evaluation on new matches.",
+  "rules": [
+    {
+      "name": "current_popper_1",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_01(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 9,
+          "confidence": 0.8889,
+          "lift": 2.6399
+        },
+        "holdout": {
+          "support": 1,
+          "confidence": 1,
+          "lift": 3.0909
+        },
+        "holdout_drop_ratio": -0.125
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "الگوی کلاسیک «فرار اضطراری به گوشه زمین در غیاب ساختار دفاعی پشت توپ». ارسال پاس قطری به فول‌بک چپ و گیر افتادن او در بال چپ برای حمل توپ زیر فشار خط طولی."
+    },
+    {
+      "name": "current_popper_2",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_03(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 6,
+          "confidence": 1,
+          "lift": 2.9699
+        },
+        "holdout": {
+          "support": 2,
+          "confidence": 0,
+          "lift": 0
+        },
+        "holdout_drop_ratio": 1
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": true
+      },
+      "validation_status": "rejected",
+      "validation_note": "در تئوری یعنی هافبک وسط بدون پوشش پشت سرش در فضای بین خطوط صاحب توپ شده و با دریبل در مرکز زمین توپ را لو داده است.\nدر مسابقات تست (Holdout) دو بار این وضعیت پیش آمده، اما هیچ‌کدام به پیامد منفی ختم نشده است (اطمینان صفر درصد!). یعنی در بازی‌های دیگر، دریافت توپ بین خطوط توانسته به پیشروی موفق ختم شود یا تیم توپ را پس گرفته است. این تعریف کلاسیک بیش‌برازش (Overfitting) روی داده‌های محدود آموزش است."
+    },
+    {
+      "name": "current_popper_3",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_05(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 5,
+          "confidence": 1,
+          "lift": 2.9699
+        },
+        "holdout": {
+          "support": 0,
+          "confidence": 0,
+          "lift": 0
+        },
+        "holdout_drop_ratio": 1
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": true
+      },
+      "validation_status": "rejected",
+      "validation_note": "بن‌بست گزینه‌های پاس در مرکز که منجر به پاس به نیم‌فضای چپ بدون سازمان دفاعی شده است."
+    },
+    {
+      "name": "current_popper_4",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_dead_end_support(S), fast_sequence(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "در این توالی: انسداد زوایای حمایت (نبود خط پاسِ بدون‌مانع به بازیکن خودی)؛ و ریتم سکانس در دهک سریع‌ترین سکانس‌ها قرار داشته است.",
+      "metrics": {
+        "train": {
+          "support": 25,
+          "confidence": 0.68,
+          "lift": 2.0195
+        },
+        "holdout": {
+          "support": 12,
+          "confidence": 0.6667,
+          "lift": 2.0606
+        },
+        "holdout_drop_ratio": 0.0196
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "وقتی هم‌تیمی‌های آزاد پوشش داده شده‌اند و گزینه‌ای برای پاس نیست، بازی با عجله و شتاب‌زده یعنی ارسال توپ به پای حریف یا به تله پرس."
+    },
+    {
+      "name": "intermediate_candidate_1",
+      "source": "cv_intermediate_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "fast_sequence(S), seq_connecting_pass(S)",
+      "candidate_metrics": {
+        "support": 46,
+        "lift": 3.003248,
+        "precision": 0.369565,
+        "folds_found": 1
+      },
+      "discovery_fold": "2",
+      "human_readable": "در این توالی: ریتم سکانس در دهک سریع‌ترین سکانس‌ها قرار داشته است؛ و در سکانس، دست‌کم یک پاس موفقِ کوتاه و غیرپیش‌رونده برای پیوند دادن بازی ثبت شده است.",
+      "metrics": {
+        "train": {
+          "support": 35,
+          "confidence": 0.6286,
+          "lift": 1.8668
+        },
+        "holdout": {
+          "support": 13,
+          "confidence": 0.6154,
+          "lift": 1.9021
+        },
+        "holdout_drop_ratio": 0.021
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "rejected",
+      "validation_note": "«رد شد به دلیل Trivial و غیر عملیاتی بودن؛ گزارهٔ پاس اتصال یا پاس یک‌ضرب در ذات بازی بارسا یک رخداد فراگیر است و ارزش تفسیری مجزا به مفهوم شتاب‌زدگی اضافه نمی‌کند.»"
+    },
+    {
+      "name": "intermediate_candidate_2",
+      "source": "cv_intermediate_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_first_time_play(S), fast_sequence(S)",
+      "candidate_metrics": {
+        "support": 23,
+        "lift": 2.544158,
+        "precision": 0.304348,
+        "folds_found": 1
+      },
+      "discovery_fold": "3",
+      "human_readable": "در این توالی: حداقل یک بار اکشن با نگه‌داری توپِ حداکثر ۰٫۵ ثانیه ثبت شده است؛ و ریتم سکانس در دهک سریع‌ترین سکانس‌ها قرار داشته است.",
+      "metrics": {
+        "train": {
+          "support": 29,
+          "confidence": 0.6552,
+          "lift": 1.9458
+        },
+        "holdout": {
+          "support": 11,
+          "confidence": 0.6364,
+          "lift": 1.9669
+        },
+        "holdout_drop_ratio": 0.0287
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "rejected",
+      "validation_note": "«رد شد به دلیل Trivial و غیر عملیاتی بودن؛ گزارهٔ پاس اتصال یا پاس یک‌ضرب در ذات بازی بارسا یک رخداد فراگیر است و ارزش تفسیری مجزا به مفهوم شتاب‌زدگی اضافه نمی‌کند.»"
+    },
+    {
+      "name": "intermediate_candidate_3",
+      "source": "cv_intermediate_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_first_time_play(S), fast_sequence(S), seq_supported_action(S)",
+      "candidate_metrics": {
+        "support": 43,
+        "lift": 2.138445,
+        "precision": 0.255814,
+        "folds_found": 1
+      },
+      "discovery_fold": "3",
+      "human_readable": "در این توالی: حداقل یک بار اکشن با نگه‌داری توپِ حداکثر ۰٫۵ ثانیه ثبت شده است؛ و ریتم سکانس در دهک سریع‌ترین سکانس‌ها قرار داشته است؛ و در دست‌کم یک اکشن، هم‌تیمیِ قابل‌مشاهده‌ای با مسیر پاسِ باز وجود داشته است.",
+      "metrics": {
+        "train": {
+          "support": 24,
+          "confidence": 0.6667,
+          "lift": 1.9799
+        },
+        "holdout": {
+          "support": 9,
+          "confidence": 0.7778,
+          "lift": 2.404
+        },
+        "holdout_drop_ratio": -0.1666
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": ""
+    },
+    {
+      "name": "intermediate_candidate_4",
+      "source": "fold_local_pattern_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_pattern_04(S)",
+      "candidate_metrics": {
+        "support": 16,
+        "lift": 2.127828,
+        "precision": 0.25,
+        "folds_found": 3
+      },
+      "discovery_fold": "3",
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 8,
+          "confidence": 0.75,
+          "lift": 2.2274
+        },
+        "holdout": {
+          "support": 2,
+          "confidence": 1,
+          "lift": 3.0909
+        },
+        "holdout_drop_ratio": -0.3333
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": ""
+    }
+  ]
+}
