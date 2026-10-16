@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚽ Hybrid Sequential Pattern Mining & Inductive Logic Programming for Tactical Build-up Analysis in Football
+#  Hybrid Sequential Pattern Mining & Inductive Logic Programming for Tactical Build-up Analysis in Football
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
