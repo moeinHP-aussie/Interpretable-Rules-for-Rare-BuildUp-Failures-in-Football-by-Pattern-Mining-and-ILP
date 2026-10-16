@@ -1,0 +1,2751 @@
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/1_run_20261013T183243Z.log
+
+==============================================================================
+TASK 1.1 — download and cache raw data
+==============================================================================
+Barcelona matches found: 35
+[ 1/35] match 3764440:  4160 events,  68884 360-rows
+[ 2/35] match 3764661:  3985 events,  65854 360-rows
+[ 3/35] match 3773369:  4806 events,  78365 360-rows
+[ 4/35] match 3773372:  3847 events,  60256 360-rows
+[ 5/35] match 3773377:  3717 events,  60731 360-rows
+[ 6/35] match 3773386:  3891 events,  59720 360-rows
+[ 7/35] match 3773387:  3822 events,  59243 360-rows
+[ 8/35] match 3773403:  3759 events,  59954 360-rows
+[ 9/35] match 3773415:  3967 events,  66257 360-rows
+[10/35] match 3773428:  3861 events,  60808 360-rows
+[11/35] match 3773457:  4205 events,  65091 360-rows
+[12/35] match 3773466:  3710 events,  54430 360-rows
+[13/35] match 3773474:  3955 events,  63893 360-rows
+[14/35] match 3773477:  3780 events,  61512 360-rows
+[15/35] match 3773497:  3991 events,  55410 360-rows
+[16/35] match 3773523:  3609 events,  58642 360-rows
+[17/35] match 3773526:  4027 events,  66102 360-rows
+[18/35] match 3773547:  4036 events,  65227 360-rows
+[19/35] match 3773552:  4179 events,  57513 360-rows
+[20/35] match 3773565:  3775 events,  59022 360-rows
+[21/35] match 3773571:  3993 events,  58503 360-rows
+[22/35] match 3773585:  4213 events,  65283 360-rows
+[23/35] match 3773586:  3953 events,  63934 360-rows
+[24/35] match 3773587:  3216 events,  47191 360-rows
+[25/35] match 3773593:  4342 events,  69601 360-rows
+[26/35] match 3773597:  4053 events,  60003 360-rows
+[27/35] match 3773625:  4011 events,  59182 360-rows
+[28/35] match 3773631:  4004 events,  60617 360-rows
+[29/35] match 3773656:  4163 events,  67776 360-rows
+[30/35] match 3773660:  3743 events,  60334 360-rows
+[31/35] match 3773661:  4129 events,  70083 360-rows
+[32/35] match 3773665:  4188 events,  65910 360-rows
+[33/35] match 3773672:  4167 events,  68649 360-rows
+[34/35] match 3773689:  3942 events,  60294 360-rows
+[35/35] match 3773695:  3831 events,  57679 360-rows
+matches with 360 data  : 35/35
+
+==============================================================================
+TASK 1.2 — convert to SPADL
+==============================================================================
+[ 1/35] match 3764440:  2477 SPADL actions
+match 3764661: dropped 1 event(s) without a location that could become actions: {'Goal Keeper': 1}
+[ 2/35] match 3764661:  2392 SPADL actions
+[ 3/35] match 3773369:  2830 SPADL actions
+[ 4/35] match 3773372:  2260 SPADL actions
+[ 5/35] match 3773377:  2215 SPADL actions
+[ 6/35] match 3773386:  2289 SPADL actions
+[ 7/35] match 3773387:  2184 SPADL actions
+[ 8/35] match 3773403:  2252 SPADL actions
+[ 9/35] match 3773415:  2417 SPADL actions
+match 3773428: dropped 1 event(s) without a location that could become actions: {'Goal Keeper': 1}
+[10/35] match 3773428:  2357 SPADL actions
+[11/35] match 3773457:  2438 SPADL actions
+[12/35] match 3773466:  2142 SPADL actions
+[13/35] match 3773474:  2317 SPADL actions
+[14/35] match 3773477:  2238 SPADL actions
+[15/35] match 3773497:  2360 SPADL actions
+[16/35] match 3773523:  1996 SPADL actions
+[17/35] match 3773526:  2355 SPADL actions
+[18/35] match 3773547:  2475 SPADL actions
+[19/35] match 3773552:  2459 SPADL actions
+[20/35] match 3773565:  2238 SPADL actions
+[21/35] match 3773571:  2335 SPADL actions
+match 3773585: dropped 2 event(s) without a location that could become actions: {'Goal Keeper': 2}
+[22/35] match 3773585:  2469 SPADL actions
+[23/35] match 3773586:  2299 SPADL actions
+[24/35] match 3773587:  1874 SPADL actions
+[25/35] match 3773593:  2621 SPADL actions
+[26/35] match 3773597:  2382 SPADL actions
+[27/35] match 3773625:  2410 SPADL actions
+[28/35] match 3773631:  2359 SPADL actions
+[29/35] match 3773656:  2445 SPADL actions
+[30/35] match 3773660:  2234 SPADL actions
+[31/35] match 3773661:  2406 SPADL actions
+[32/35] match 3773665:  2472 SPADL actions
+[33/35] match 3773672:  2463 SPADL actions
+[34/35] match 3773689:  2296 SPADL actions
+[35/35] match 3773695:  2291 SPADL actions
+total SPADL actions    : 82047
+reference frame check (Barcelona must attack towards +x):
+is_barca
+False    13.4
+True     92.5
+per-match orientation check: 35/35 matches OK
+
+==============================================================================
+TASK 1.3 — link StatsBomb 360 freeze frames
+==============================================================================
+[ 1/35] match 3764440: build-up 360 coverage 94.3%
+[ 2/35] match 3764661: build-up 360 coverage 92.0%
+[ 3/35] match 3773369: build-up 360 coverage 92.3%
+[ 4/35] match 3773372: build-up 360 coverage 90.2%
+[ 5/35] match 3773377: build-up 360 coverage 95.1%
+[ 6/35] match 3773386: build-up 360 coverage 94.1%
+[ 7/35] match 3773387: build-up 360 coverage 88.6%
+[ 8/35] match 3773403: build-up 360 coverage 94.9%
+[ 9/35] match 3773415: build-up 360 coverage 91.5%
+[10/35] match 3773428: build-up 360 coverage 89.5%
+[11/35] match 3773457: build-up 360 coverage 90.4%
+[12/35] match 3773466: build-up 360 coverage 93.3%
+[13/35] match 3773474: build-up 360 coverage 94.4%
+[14/35] match 3773477: build-up 360 coverage 94.8%
+[15/35] match 3773497: build-up 360 coverage 84.4%
+[16/35] match 3773523: build-up 360 coverage 93.2%
+[17/35] match 3773526: build-up 360 coverage 93.7%
+[18/35] match 3773547: build-up 360 coverage 95.7%
+[19/35] match 3773552: build-up 360 coverage 86.0%
+[20/35] match 3773565: build-up 360 coverage 95.6%
+[21/35] match 3773571: build-up 360 coverage 92.3%
+[22/35] match 3773585: build-up 360 coverage 91.0%
+[23/35] match 3773586: build-up 360 coverage 93.4%
+[24/35] match 3773587: build-up 360 coverage 93.6%
+[25/35] match 3773593: build-up 360 coverage 90.6%
+[26/35] match 3773597: build-up 360 coverage 93.5%
+[27/35] match 3773625: build-up 360 coverage 92.6%
+[28/35] match 3773631: build-up 360 coverage 93.5%
+[29/35] match 3773656: build-up 360 coverage 93.1%
+[30/35] match 3773660: build-up 360 coverage 95.1%
+[31/35] match 3773661: build-up 360 coverage 93.9%
+[32/35] match 3773665: build-up 360 coverage 95.4%
+[33/35] match 3773672: build-up 360 coverage 96.0%
+[34/35] match 3773689: build-up 360 coverage 94.5%
+[35/35] match 3773695: build-up 360 coverage 91.3%
+build-up actions       : 71394
+360 coverage           : 92.65%   (acceptance: >= 70%)
+
+==============================================================================
+TASK 1.4 — player identity and role reference
+==============================================================================
+players                : 25  (core: 24)
+player_atom          display_name                 role  appearances
+     p_5503          Lionel Messi              forward           35
+     p_8118       Frenkie de Jong   central_midfielder           34
+     p_5211            Jordi Alba            full_back           33
+    p_20055 Marc-André ter Stegen           goalkeeper           29
+     p_6826       Clément Lenglet     central_defender           32
+     p_5487     Antoine Griezmann              forward           33
+     p_5203       Sergio Busquets defensive_midfielder           33
+    p_30486                 Pedri   central_midfielder           35
+    p_21881          Sergiño Dest            full_back           28
+    p_43728        Óscar Mingueza     central_defender           24
+     p_5477       Ousmane Dembélé               winger           27
+     p_5213          Gerard Piqué     central_defender           18
+    p_32480         Ronald Araújo     central_defender           21
+     p_6379         Sergi Roberto            full_back           15
+     p_4447    Martin Braithwaite              forward           26
+
+==============================================================================
+PHASE 1 DONE
+==============================================================================
+next: uv run python scripts/run_phase2.py
+[run-log] 1 completed; elapsed=306.3s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/1_run_20261013T183243Z.log
+
+
+
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/2_run_20261013T183751Z.log
+Phase-2 cache uses an older segmentation/label definition; rebuilding its derived outputs.
+
+==============================================================================
+TASK 2.1 — segment build-up sequences
+==============================================================================
+sequences              : 1308
+matches                : 35
+length min/median/max  : 2 / 8 / 25   (acceptance: 2..25)
+end_reason
+attacking_zone_entry    442
+failed_action           427
+possession_end          356
+length_cap               79
+shot                      4
+
+==============================================================================
+TASK 2.2 — label with the operational negative-outcome definition
+==============================================================================
+label
+non_negative    1133
+negative         175
+minority class share   : 13.38%   (acceptance: >= 10%)
+negative reason counts:
+negative_reason
+own_half_loss_not_regained_within_5s    175
+
+turnover zone x label:
+label                     negative  non_negative
+turnover_zone                                   
+advanced_opponent_middle         0           128
+defensive_third                 62            26
+none                             0           819
+outside_target_zones             0           131
+own_half_midfield              113            29
+
+sequence end reason x label:
+label                 negative  non_negative
+end_reason                                  
+attacking_zone_entry         0           442
+failed_action              152           275
+length_cap                   0            79
+possession_end              22           334
+shot                         1             3
+
+label diagnostics:
+regained within 5s             : 7.0%
+opponent shot after loss       : 0.9%
+opponent entered defensive third: 12.2%
+
+==============================================================================
+TASK 2.3 — extract 2/3-player interaction subsets
+==============================================================================
+pass links             : 5730
+three-player chains    : 3792
+sequences with a pair  : 94.34%   (acceptance: >= 50%)
+
+==============================================================================
+TASK 2.4 — context-matched negative sampling
+==============================================================================
+positive examples      : 175
+negative examples      : 350
+negative:positive ratio: 1:2.00
+exact-stratum matches  : 92.6%
+global fallback share  : 0.0%   (maximum: 5%)
+zone overlap pos/neg   : 1.000   (acceptance: >= 0.40)
+
+==============================================================================
+PHASE 2 DONE
+==============================================================================
+next: uv run python scripts/run_phase3.py
+[run-log] 2 completed; elapsed=36.4s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/2_run_20261013T183751Z.log
+
+
+
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/3_run_20261013T183829Z.log
+
+==============================================================================
+TASK 3.2 — facts for one sample match
+==============================================================================
+file                   : /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/facts_match_3764440.pl
+sequences / facts      : 30 / 4999
+  swipl consult: clean  (exit 0)
+
+==============================================================================
+TASK 3.3 — facts for the whole dataset
+==============================================================================
+file                   : /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/facts_all.pl
+matches                : 35
+sequences              : 1308
+total facts            : 158132
+  swipl consult: clean  (exit 0)
+
+predicate counts:
+  in_sequence                12388
+  action_order               12388
+  actor                      12388
+  action_type                12388
+  action_result              12388
+  at_third                   12388
+  at_lane                    12388
+  pressure_level             12388
+  visible_player_count       11446
+  in_prefix                  11080
+  pass_direction              6147
+  pass_length                 6147
+  pass_end_lane               6147
+  under_pressure              5807
+  involved_in                 4880
+  progressive                 2092
+  sequence                    1308
+  sequence_length             1308
+  last_retained_action        1308
+  final_action                1308
+  has_role                      25
+  plays_for                     25
+
+==============================================================================
+PHASE 3 DONE
+==============================================================================
+next: run scripts/run_phase4.py to generate tactical facts and validate the bundled bk.pl rules
+[run-log] 3 completed; elapsed=5.4s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/3_run_20261013T183829Z.log
+
+
+
+/content/football_tactical_ilp_project
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/4_run_20261013T183835Z.log
+installed bundled Prolog rules: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/bk.pl
+
+==============================================================================
+TASK 4.1-4.5 — generate tactical concept facts
+==============================================================================
+facts_tactical.pl: 72576 facts over 1308 sequences
+  opponent_visible_majority_eligible_action   11391
+  has_open_support              9257
+  forms_triangle                9203
+  rest_defence_exposed          6632
+  dwell_time                    4909
+  traps_opponent                4707
+  opponent_visible_majority_action    3935
+  caged_opponent                2224
+  no_open_support               2189
+  flank_dribble                 1966
+  central_long_carry            1964
+  half_space_occupier           1487
+  diagonal_pass_shape           1410
+  one_touch                     1260
+  frequently_involved           1253
+  tempo                         1071
+  drop_between_lines            1041
+  hesitation                     778
+  beyond_defensive_line          693
+  central_backward_pass          662
+  breaks_defensive_line          601
+  long_pass_shape                498
+  keeper_open_play_pass          491
+  final_third_destination        476
+  high_pass_shape                457
+  pass_exchange_sequence         451
+  flank_line_carry               322
+  flank_cut_inside               300
+  counterpress_action            236
+  flank_to_center_progression     194
+  switch_shape_to_right          168
+  switch_shape_to_left           140
+  flank_backward_carry            91
+  central_take_on                 67
+  penalty_area_destination        51
+  minimum_visible_majority_frames       1
+
+==============================================================================
+TASK 4.6 — validate bk.pl rules against the facts
+==============================================================================
+concept    rule                                     solutions
+------------------------------------------------------------
+1.1        line_breaking_pass(_)                          266
+1.2        diagonal_pass(_)                              1410
+1.3        line_pass(_)                                  1454
+1.4a       switch_to_right(_)                             156
+1.4b       switch_to_left(_)                              131
+1.8        aerial_pass(_)                                 457
+1.9        long_pass(_)                                   498
+1.5        pass_in_behind(_)                              198
+1.6        connecting_pass(_)                            1522
+2.3        dropped_between_lines(_)                      1041
+3.4        give_and_continue(_,_)                        1253
+3.6a       triangulation(_)                              9203
+3.6b       triangle_trap(_)                              4707
+3.6b       rondo_cage(_)                                 2224
+4.1        supported_action(_)                           9257
+4.3        dead_end_support(_)                           2189
+4.6        opponent_visible_majority(_)                   209
+5.1        persistent_half_space_occupier(_,_)           1487
+6.2        fast_sequence(_)                               322
+6.2        slow_sequence(_)                                54
+6.3        first_time_play(_)                            1260
+6.3b       quick_line_break(_)                             36
+6.4        dwelt_long(_)                                  955
+8.3        counter_pressed(_)                             236
+8.4        press_resistance(_)                            323
+12.1       keeper_build_up_start(_)                       113
+12.4       keeper_played_open_play(_)                     317
+
+==============================================================================
+PHASE 4 DONE
+==============================================================================
+all rules produce solutions
+next: scripts/run_phase5.py
+[run-log] 4 completed; elapsed=277.9s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/4_run_20261013T183835Z.log
+Phase 4 outputs verified: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/facts_tactical.pl, /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/bk.pl
+
+
+
+
+## Optional Arm 0 — reference: `full_tactical` Popper
+
+/content/football_tactical_ilp_project
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/5_run_20261013T185553Z.log
+
+==============================================================================
+TASK 5.1 — generate Popper input files (exs.pl, bias.pl, bk.pl)
+==============================================================================
+output dir : /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/popper
+exs.pl     : 129 pos, 260 neg
+match split: train=26 matches (129 pos/260 neg), holdout=9 matches (46 pos/90 neg)
+matched negatives: True
+bias.pl    : 34 body predicates (34 base + 0 complements), max_vars=2, max_body=3, max_clauses=4
+Popper search timeout: 900s (hard stop at 960s)
+Search trace below is Popper's emitted progress/incumbent output; internal solver decisions not emitted by Popper are not reconstructed.
+
+==============================================================================
+TASK 5.2 — validate the generated files
+==============================================================================
+exs.pl + bk.pl load cleanly: ok(129,260,209)
+
+==============================================================================
+TASK 5.3 — run Popper in its dedicated environment
+==============================================================================
+Popper live output (also saved to /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_popper_output.txt):
+Enforced maximum clauses per noisy hypothesis: 4
+10.6s Generating partial hypotheses of size: 2
+10.7s Generating partial hypotheses of size: 3
+12.9s Generating partial hypotheses of size: 4
+NO SOLUTION
+Popper worker exited with status 1.
+
+==============================================================================
+PHASE 5 FAILED
+==============================================================================
+Popper did not complete successfully; inspect data/reports/phase5_popper_output.txt.
+[run-log] 5 failed (exit=1); elapsed=49.1s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/5_run_20261013T185553Z.log
+
+--- Full Popper log: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+10.6s Generating partial hypotheses of size: 2
+10.7s Generating partial hypotheses of size: 3
+12.9s Generating partial hypotheses of size: 4
+NO SOLUTION
+
+Arm 0 finished normally: Popper found no solution in the configured search space.
+
+
+
+
+### Optional Arm 0 CV — `full_tactical` reference
+/content/football_tactical_ilp_project
+Structured report: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_cross_validation.json
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_cross_validation/fold_01_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+5.1s Generating partial hypotheses of size: 2
+5.2s Generating partial hypotheses of size: 3
+5.6s ********************
+5.6s New best hypothesis:
+5.6s tp:9 fn:93 tn:201 fp:5 size:3 mdl:101
+5.6s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+5.6s ********************
+6.4s ********************
+6.4s New best hypothesis:
+6.4s tp:30 fn:72 tn:181 fp:25 size:3 mdl:100
+6.4s negative_outcome(V0):- seq_rest_defence_exposed(V0),fast_sequence(V0).
+6.4s ********************
+6.7s Generating partial hypotheses of size: 4
+19.3s ********************
+19.3s New best hypothesis:
+19.3s tp:20 fn:82 tn:196 fp:10 size:7 mdl:99
+19.3s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+19.3s negative_outcome(V0):- seq_line_pass(V0),seq_first_time_play(V0),fast_sequence(V0).
+19.3s ********************
+19.3s ********** SOLUTION **********
+19.3s Precision:0.67 Recall:0.20 TP:20 FN:82 TN:196 FP:10 Size:7 MDL:99
+19.3s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+19.3s negative_outcome(V0):- seq_line_pass(V0),seq_first_time_play(V0),fast_sequence(V0).
+19.3s ******************************
+
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_cross_validation/fold_02_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+5.6s Generating partial hypotheses of size: 2
+5.7s Generating partial hypotheses of size: 3
+7.0s Generating partial hypotheses of size: 4
+NO SOLUTION
+
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_cross_validation/fold_03_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+6.6s Generating partial hypotheses of size: 2
+6.8s Generating partial hypotheses of size: 3
+9.7s Generating partial hypotheses of size: 4
+10.0s ********************
+10.0s New best hypothesis:
+10.0s tp:28 fn:109 tn:243 fp:22 size:4 mdl:135
+10.0s negative_outcome(V0):- seq_rest_defence_exposed(V0),seq_flank_dribble(V0),fast_sequence(V0).
+10.0s ********************
+40.0s ********** SOLUTION **********
+40.0s Precision:0.56 Recall:0.20 TP:28 FN:109 TN:243 FP:22 Size:4 MDL:135
+40.0s negative_outcome(V0):- seq_rest_defence_exposed(V0),seq_flank_dribble(V0),fast_sequence(V0).
+40.0s ******************************
+
+
+
+
+
+### Arm 3, step 1 of 3 — Mine patterns and prepare hybrid inputs
+
+/content/football_tactical_ilp_project
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_run_20261013T190127Z.log
+SEQUENTIAL METHOD — ordered patterns plus the complete tactical vocabulary
+training examples: 389 (129 negative outcomes)
+mined 2-to-3-event features: 6; component predicates kept independently active: 9
+hybrid Popper vocabulary: 40 body predicates; max body: 3; max clauses: 4
+search-space proxy: {'body_predicates': 40, 'max_body': 3, 'max_clauses': 4, 'unordered_clause_body_proxy': 10700, 'unordered_program_proxy': 546062969730825}
+Pattern preparation complete -> /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_prepared.json
+[run-log] phase5_sequential completed; elapsed=36.7s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_run_20261013T190127Z.log
+{
+  "method": "hybrid_sequential",
+  "effective_method": "hybrid_sequential",
+  "pattern_fallback": false,
+  "evaluation_split": {
+    "seed": 202021,
+    "holdout_fraction": 0.25,
+    "train_matches": [
+      "3764440",
+      "3764661",
+      "3773372",
+      "3773386",
+      "3773387",
+      "3773403",
+      "3773415",
+      "3773428",
+      "3773474",
+      "3773477",
+      "3773523",
+      "3773526",
+      "3773552",
+      "3773565",
+      "3773571",
+      "3773586",
+      "3773587",
+      "3773593",
+      "3773597",
+      "3773625",
+      "3773631",
+      "3773656",
+      "3773660",
+      "3773665",
+      "3773672",
+      "3773689"
+    ],
+    "holdout_matches": [
+      "3773369",
+      "3773377",
+      "3773457",
+      "3773466",
+      "3773497",
+      "3773547",
+      "3773585",
+      "3773661",
+      "3773695"
+    ],
+    "training_examples": 389,
+    "holdout_examples": 136
+  },
+  "mining_population": "labelled sequences in training matches only",
+  "pattern_input": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/processed/sequential_method/pattern_sequences.parquet",
+  "pattern_facts": {
+    "path": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/popper_sequential/facts_patterns.pl",
+    "features": [
+      {
+        "predicate": "seq_pattern_01",
+        "pattern": [
+          [
+            "tactical:line_pass@pass@right_channel@defensive_third"
+          ],
+          [
+            "tactical:first_time_play@pass@right_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:line_pass@pass@right_channel@defensive_third",
+                "predicate": "line_pass",
+                "action_type": "pass",
+                "lane": "right_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:first_time_play@pass@right_channel@defensive_third",
+                "predicate": "first_time_play",
+                "action_type": "pass",
+                "lane": "right_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 9
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 12
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 7
+          }
+        ],
+        "pattern_text": "{tactical:line_pass@pass@right_channel@defensive_third} -> {tactical:first_time_play@pass@right_channel@defensive_third}",
+        "training_target_support": 11,
+        "training_control_support": 11,
+        "target_rate": 0.19412512400793644,
+        "control_rate": 0.05593055740291207,
+        "growth_rate": 3.4708240543626183,
+        "log2_growth": 1.7952782328322956,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 33
+      },
+      {
+        "predicate": "seq_pattern_02",
+        "pattern": [
+          [
+            "tactical:rest_defence_exposed@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:rest_defence_exposed@pass@left_channel@defensive_third"
+          ],
+          [
+            "tactical:under_pressure@dribble@left_channel@middle_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@central_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@left_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@dribble@left_channel@middle_third",
+                "predicate": "under_pressure",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "middle_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 17
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 8
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 9
+          }
+        ],
+        "pattern_text": "{tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@left_channel@defensive_third} -> {tactical:under_pressure@dribble@left_channel@middle_third}",
+        "training_target_support": 9,
+        "training_control_support": 8,
+        "target_rate": 0.17402963789682535,
+        "control_rate": 0.05121307176916431,
+        "growth_rate": 3.398148790629849,
+        "log2_growth": 1.7647490234474505,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 19
+      },
+      {
+        "predicate": "seq_pattern_03",
+        "pattern": [
+          [
+            "tactical:under_pressure@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:rest_defence_exposed@dribble@left_channel@defensive_third"
+          ],
+          [
+            "tactical:dead_end_support@pass@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@pass@central_channel@defensive_third",
+                "predicate": "under_pressure",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@dribble@left_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:dead_end_support@pass@left_channel@defensive_third",
+                "predicate": "dead_end_support",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 8
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 3
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 8
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 3
+          }
+        ],
+        "pattern_text": "{tactical:under_pressure@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@dribble@left_channel@defensive_third} -> {tactical:dead_end_support@pass@left_channel@defensive_third}",
+        "training_target_support": 5,
+        "training_control_support": 3,
+        "target_rate": 0.15462859623015868,
+        "control_rate": 0.04610001396063448,
+        "growth_rate": 3.354198468620822,
+        "log2_growth": 1.7459680559934254,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 11
+      },
+      {
+        "predicate": "seq_pattern_04",
+        "pattern": [
+          [
+            "tactical:supported_action@dribble@right_channel@defensive_third"
+          ],
+          [
+            "tactical:under_pressure@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:rest_defence_exposed@pass@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:supported_action@dribble@right_channel@defensive_third",
+                "predicate": "supported_action",
+                "action_type": "dribble",
+                "lane": "right_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@pass@central_channel@defensive_third",
+                "predicate": "under_pressure",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@left_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 10
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 9
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 2
+          }
+        ],
+        "pattern_text": "{tactical:supported_action@dribble@right_channel@defensive_third} -> {tactical:under_pressure@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@left_channel@defensive_third}",
+        "training_target_support": 5,
+        "training_control_support": 4,
+        "target_rate": 0.15536644345238088,
+        "control_rate": 0.046978271497680975,
+        "growth_rate": 3.3071979555495217,
+        "log2_growth": 1.725609402028067,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 12
+      },
+      {
+        "predicate": "seq_pattern_05",
+        "pattern": [
+          [
+            "tactical:rest_defence_exposed@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:diagonal_pass@pass@left_channel@defensive_third"
+          ],
+          [
+            "tactical:flank_dribble@dribble@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@central_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:diagonal_pass@pass@left_channel@defensive_third",
+                "predicate": "diagonal_pass",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:flank_dribble@dribble@left_channel@defensive_third",
+                "predicate": "flank_dribble",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 16
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 13
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 4
+          }
+        ],
+        "pattern_text": "{tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:diagonal_pass@pass@left_channel@defensive_third} -> {tactical:flank_dribble@dribble@left_channel@defensive_third}",
+        "training_target_support": 8,
+        "training_control_support": 7,
+        "target_rate": 0.17116505456349201,
+        "control_rate": 0.05199513142561716,
+        "growth_rate": 3.2919438776370082,
+        "log2_growth": 1.7189397403327615,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 17
+      },
+      {
+        "predicate": "seq_pattern_06",
+        "pattern": [
+          [
+            "tactical:central_long_carry@dribble@left_channel@defensive_third"
+          ],
+          [
+            "tactical:under_pressure@pass@left_channel@defensive_third"
+          ],
+          [
+            "tactical:central_long_carry@dribble@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:central_long_carry@dribble@left_channel@defensive_third",
+                "predicate": "central_long_carry",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@pass@left_channel@defensive_third",
+                "predicate": "under_pressure",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:central_long_carry@dribble@left_channel@defensive_third",
+                "predicate": "central_long_carry",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 6
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 5
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 6
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 5
+          }
+        ],
+        "pattern_text": "{tactical:central_long_carry@dribble@left_channel@defensive_third} -> {tactical:under_pressure@pass@left_channel@defensive_third} -> {tactical:central_long_carry@dribble@left_channel@defensive_third}",
+        "training_target_support": 5,
+        "training_control_support": 2,
+        "target_rate": 0.15072234623015868,
+        "control_rate": 0.04650951845318304,
+        "growth_rate": 3.2406774192228487,
+        "log2_growth": 1.696295420270308,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 11
+      }
+    ],
+    "fact_count": 103
+  },
+  "mining_config": {
+    "max_gap": 2,
+    "min_support": 5,
+    "min_target_support": 5,
+    "min_growth_rate": 1.5,
+    "smoothing": 0.5,
+    "min_pattern_events": 2,
+    "max_pattern_events": 3,
+    "max_items_per_event": 1,
+    "max_selected_patterns": 8,
+    "excluded_suffix_actions": 1,
+    "max_candidates": 50000
+  },
+  "mining_diagnostics": {
+    "training_target_sequences": 129,
+    "training_control_sequences": 846,
+    "patterns_visited": 2574,
+    "target_closed_patterns": 2496,
+    "patterns_selected": 8,
+    "growth_rate_context_adjusted": true,
+    "shared_context_strata": 46,
+    "no_pattern_fallback": false
+  },
+  "body_predicate_count": 40,
+  "hybrid_vocabulary": {
+    "body_predicates": 40,
+    "base_predicates": 34,
+    "retained_base_predicates": 34,
+    "pattern_predicates": 6,
+    "pattern_component_predicates": [
+      "seq_central_long_carry",
+      "seq_dead_end_support",
+      "seq_diagonal_pass",
+      "seq_first_time_play",
+      "seq_flank_dribble",
+      "seq_line_pass",
+      "seq_rest_defence_exposed",
+      "seq_supported_action",
+      "seq_under_pressure"
+    ],
+    "max_vars": 2,
+    "max_body": 3,
+    "max_clauses": 4
+  },
+  "popper_max_body": 3,
+  "popper_max_vars": 2,
+  "popper_max_clauses": 4,
+  "search_space_proxy": {
+    "body_predicates": 40,
+    "max_body": 3,
+    "max_clauses": 4,
+    "unordered_clause_body_proxy": 10700,
+    "unordered_program_proxy": 546062969730825
+  },
+  "task_dir": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/popper_sequential"
+}
+
+
+
+### Arm 3, step 2 of 3 — Train the hybrid Popper model
+/content/football_tactical_ilp_project
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_run_20261013T190226Z.log
+Enforced maximum clauses per noisy hypothesis: 4
+5.4s Generating partial hypotheses of size: 2
+5.4s ********************
+5.4s New best hypothesis:
+5.4s tp:5 fn:124 tn:259 fp:1 size:2 mdl:127
+5.4s negative_outcome(V0):- seq_pattern_03(V0).
+5.4s ********************
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:9 fn:120 tn:258 fp:2 size:2 mdl:124
+5.5s negative_outcome(V0):- seq_pattern_02(V0).
+5.5s ********************
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:11 fn:118 tn:258 fp:2 size:2 mdl:122
+5.5s negative_outcome(V0):- seq_pattern_01(V0).
+5.5s ********************
+5.5s Generating partial hypotheses of size: 3
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:23 fn:106 tn:256 fp:4 size:6 mdl:116
+5.5s negative_outcome(V0):- seq_pattern_01(V0).
+5.5s negative_outcome(V0):- seq_pattern_05(V0).
+5.5s negative_outcome(V0):- seq_pattern_06(V0).
+5.5s ********************
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:27 fn:102 tn:255 fp:5 size:8 mdl:115
+5.5s negative_outcome(V0):- seq_pattern_02(V0).
+5.5s negative_outcome(V0):- seq_pattern_06(V0).
+5.5s negative_outcome(V0):- seq_pattern_03(V0).
+5.5s negative_outcome(V0):- seq_pattern_01(V0).
+5.5s ********************
+7.7s Generating partial hypotheses of size: 4
+19.1s ********** SOLUTION **********
+19.1s Precision:0.84 Recall:0.21 TP:27 FN:102 TN:255 FP:5 Size:8 MDL:115
+19.1s negative_outcome(V0):- seq_pattern_02(V0).
+19.1s negative_outcome(V0):- seq_pattern_06(V0).
+19.1s negative_outcome(V0):- seq_pattern_03(V0).
+19.1s negative_outcome(V0):- seq_pattern_01(V0).
+19.1s ******************************
+
+Learned sequential-pattern rules:
+  negative_outcome(S) :- seq_pattern_02.
+  negative_outcome(S) :- seq_pattern_06.
+  negative_outcome(S) :- seq_pattern_03.
+  negative_outcome(S) :- seq_pattern_01.
+
+Detailed training report -> /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_training.json
+Training scores are discovery diagnostics; use run_phase5_sequential_cv.py for quality evaluation.
+[run-log] phase5_sequential completed; elapsed=19.7s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_run_20261013T190226Z.log
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_training_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+5.4s Generating partial hypotheses of size: 2
+5.4s ********************
+5.4s New best hypothesis:
+5.4s tp:5 fn:124 tn:259 fp:1 size:2 mdl:127
+5.4s negative_outcome(V0):- seq_pattern_03(V0).
+5.4s ********************
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:9 fn:120 tn:258 fp:2 size:2 mdl:124
+5.5s negative_outcome(V0):- seq_pattern_02(V0).
+5.5s ********************
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:11 fn:118 tn:258 fp:2 size:2 mdl:122
+5.5s negative_outcome(V0):- seq_pattern_01(V0).
+5.5s ********************
+5.5s Generating partial hypotheses of size: 3
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:23 fn:106 tn:256 fp:4 size:6 mdl:116
+5.5s negative_outcome(V0):- seq_pattern_01(V0).
+5.5s negative_outcome(V0):- seq_pattern_05(V0).
+5.5s negative_outcome(V0):- seq_pattern_06(V0).
+5.5s ********************
+5.5s ********************
+5.5s New best hypothesis:
+5.5s tp:27 fn:102 tn:255 fp:5 size:8 mdl:115
+5.5s negative_outcome(V0):- seq_pattern_02(V0).
+5.5s negative_outcome(V0):- seq_pattern_06(V0).
+5.5s negative_outcome(V0):- seq_pattern_03(V0).
+5.5s negative_outcome(V0):- seq_pattern_01(V0).
+5.5s ********************
+7.7s Generating partial hypotheses of size: 4
+19.1s ********** SOLUTION **********
+19.1s Precision:0.84 Recall:0.21 TP:27 FN:102 TN:255 FP:5 Size:8 MDL:115
+19.1s negative_outcome(V0):- seq_pattern_02(V0).
+19.1s negative_outcome(V0):- seq_pattern_06(V0).
+19.1s negative_outcome(V0):- seq_pattern_03(V0).
+19.1s negative_outcome(V0):- seq_pattern_01(V0).
+19.1s ******************************
+
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_training.json ---
+{
+  "method": "hybrid_sequential_full_tactical_vocabulary",
+  "effective_method": "hybrid_sequential",
+  "pattern_fallback": false,
+  "evaluation_split": {
+    "seed": 202021,
+    "holdout_fraction": 0.25,
+    "train_matches": [
+      "3764440",
+      "3764661",
+      "3773372",
+      "3773386",
+      "3773387",
+      "3773403",
+      "3773415",
+      "3773428",
+      "3773474",
+      "3773477",
+      "3773523",
+      "3773526",
+      "3773552",
+      "3773565",
+      "3773571",
+      "3773586",
+      "3773587",
+      "3773593",
+      "3773597",
+      "3773625",
+      "3773631",
+      "3773656",
+      "3773660",
+      "3773665",
+      "3773672",
+      "3773689"
+    ],
+    "holdout_matches": [
+      "3773369",
+      "3773377",
+      "3773457",
+      "3773466",
+      "3773497",
+      "3773547",
+      "3773585",
+      "3773661",
+      "3773695"
+    ],
+    "training_examples": 389,
+    "holdout_examples": 136
+  },
+  "mining_population": "labelled sequences in training matches only",
+  "pattern_input": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/processed/sequential_method/pattern_sequences.parquet",
+  "pattern_facts": {
+    "path": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/popper_sequential/facts_patterns.pl",
+    "features": [
+      {
+        "predicate": "seq_pattern_01",
+        "pattern": [
+          [
+            "tactical:line_pass@pass@right_channel@defensive_third"
+          ],
+          [
+            "tactical:first_time_play@pass@right_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:line_pass@pass@right_channel@defensive_third",
+                "predicate": "line_pass",
+                "action_type": "pass",
+                "lane": "right_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:first_time_play@pass@right_channel@defensive_third",
+                "predicate": "first_time_play",
+                "action_type": "pass",
+                "lane": "right_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 9
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 12
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 7
+          }
+        ],
+        "pattern_text": "{tactical:line_pass@pass@right_channel@defensive_third} -> {tactical:first_time_play@pass@right_channel@defensive_third}",
+        "training_target_support": 11,
+        "training_control_support": 11,
+        "target_rate": 0.19412512400793644,
+        "control_rate": 0.05593055740291207,
+        "growth_rate": 3.4708240543626183,
+        "log2_growth": 1.7952782328322956,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 33
+      },
+      {
+        "predicate": "seq_pattern_02",
+        "pattern": [
+          [
+            "tactical:rest_defence_exposed@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:rest_defence_exposed@pass@left_channel@defensive_third"
+          ],
+          [
+            "tactical:under_pressure@dribble@left_channel@middle_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@central_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@left_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@dribble@left_channel@middle_third",
+                "predicate": "under_pressure",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "middle_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 17
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 8
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 9
+          }
+        ],
+        "pattern_text": "{tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@left_channel@defensive_third} -> {tactical:under_pressure@dribble@left_channel@middle_third}",
+        "training_target_support": 9,
+        "training_control_support": 8,
+        "target_rate": 0.17402963789682535,
+        "control_rate": 0.05121307176916431,
+        "growth_rate": 3.398148790629849,
+        "log2_growth": 1.7647490234474505,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 19
+      },
+      {
+        "predicate": "seq_pattern_03",
+        "pattern": [
+          [
+            "tactical:under_pressure@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:rest_defence_exposed@dribble@left_channel@defensive_third"
+          ],
+          [
+            "tactical:dead_end_support@pass@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@pass@central_channel@defensive_third",
+                "predicate": "under_pressure",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@dribble@left_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:dead_end_support@pass@left_channel@defensive_third",
+                "predicate": "dead_end_support",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 8
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 3
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 8
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 3
+          }
+        ],
+        "pattern_text": "{tactical:under_pressure@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@dribble@left_channel@defensive_third} -> {tactical:dead_end_support@pass@left_channel@defensive_third}",
+        "training_target_support": 5,
+        "training_control_support": 3,
+        "target_rate": 0.15462859623015868,
+        "control_rate": 0.04610001396063448,
+        "growth_rate": 3.354198468620822,
+        "log2_growth": 1.7459680559934254,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 11
+      },
+      {
+        "predicate": "seq_pattern_04",
+        "pattern": [
+          [
+            "tactical:supported_action@dribble@right_channel@defensive_third"
+          ],
+          [
+            "tactical:under_pressure@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:rest_defence_exposed@pass@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:supported_action@dribble@right_channel@defensive_third",
+                "predicate": "supported_action",
+                "action_type": "dribble",
+                "lane": "right_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@pass@central_channel@defensive_third",
+                "predicate": "under_pressure",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@left_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 10
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 9
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 2
+          }
+        ],
+        "pattern_text": "{tactical:supported_action@dribble@right_channel@defensive_third} -> {tactical:under_pressure@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@left_channel@defensive_third}",
+        "training_target_support": 5,
+        "training_control_support": 4,
+        "target_rate": 0.15536644345238088,
+        "control_rate": 0.046978271497680975,
+        "growth_rate": 3.3071979555495217,
+        "log2_growth": 1.725609402028067,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 12
+      },
+      {
+        "predicate": "seq_pattern_05",
+        "pattern": [
+          [
+            "tactical:rest_defence_exposed@pass@central_channel@defensive_third"
+          ],
+          [
+            "tactical:diagonal_pass@pass@left_channel@defensive_third"
+          ],
+          [
+            "tactical:flank_dribble@dribble@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:rest_defence_exposed@pass@central_channel@defensive_third",
+                "predicate": "rest_defence_exposed",
+                "action_type": "pass",
+                "lane": "central_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:diagonal_pass@pass@left_channel@defensive_third",
+                "predicate": "diagonal_pass",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:flank_dribble@dribble@left_channel@defensive_third",
+                "predicate": "flank_dribble",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 1
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 2,
+            "intervening_actions": 1,
+            "embedding_count": 16
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 13
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 4
+          }
+        ],
+        "pattern_text": "{tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:diagonal_pass@pass@left_channel@defensive_third} -> {tactical:flank_dribble@dribble@left_channel@defensive_third}",
+        "training_target_support": 8,
+        "training_control_support": 7,
+        "target_rate": 0.17116505456349201,
+        "control_rate": 0.05199513142561716,
+        "growth_rate": 3.2919438776370082,
+        "log2_growth": 1.7189397403327615,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 17
+      },
+      {
+        "predicate": "seq_pattern_06",
+        "pattern": [
+          [
+            "tactical:central_long_carry@dribble@left_channel@defensive_third"
+          ],
+          [
+            "tactical:under_pressure@pass@left_channel@defensive_third"
+          ],
+          [
+            "tactical:central_long_carry@dribble@left_channel@defensive_third"
+          ]
+        ],
+        "pattern_chain": [
+          {
+            "step": 1,
+            "items": [
+              {
+                "symbol": "tactical:central_long_carry@dribble@left_channel@defensive_third",
+                "predicate": "central_long_carry",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "items": [
+              {
+                "symbol": "tactical:under_pressure@pass@left_channel@defensive_third",
+                "predicate": "under_pressure",
+                "action_type": "pass",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "items": [
+              {
+                "symbol": "tactical:central_long_carry@dribble@left_channel@defensive_third",
+                "predicate": "central_long_carry",
+                "action_type": "dribble",
+                "lane": "left_channel",
+                "third": "defensive_third"
+              }
+            ]
+          }
+        ],
+        "step_distance_constraints": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "min_action_index_distance": 1,
+            "max_action_index_distance": 3,
+            "max_intervening_actions": 2
+          }
+        ],
+        "observed_step_distance_counts": [
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 6
+          },
+          {
+            "from_step": 1,
+            "to_step": 2,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 5
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 1,
+            "intervening_actions": 0,
+            "embedding_count": 6
+          },
+          {
+            "from_step": 2,
+            "to_step": 3,
+            "action_index_distance": 3,
+            "intervening_actions": 2,
+            "embedding_count": 5
+          }
+        ],
+        "pattern_text": "{tactical:central_long_carry@dribble@left_channel@defensive_third} -> {tactical:under_pressure@pass@left_channel@defensive_third} -> {tactical:central_long_carry@dribble@left_channel@defensive_third}",
+        "training_target_support": 5,
+        "training_control_support": 2,
+        "target_rate": 0.15072234623015868,
+        "control_rate": 0.04650951845318304,
+        "growth_rate": 3.2406774192228487,
+        "log2_growth": 1.696295420270308,
+        "growth_smoothing_alpha": 0.5,
+        "all_sequence_coverage": 11
+      }
+    ],
+    "fact_count": 103
+  },
+  "mining_config": {
+    "max_gap": 2,
+    "min_support": 5,
+    "min_target_support": 5,
+    "min_growth_rate": 1.5,
+    "smoothing": 0.5,
+    "min_pattern_events": 2,
+    "max_pattern_events": 3,
+    "max_items_per_event": 1,
+    "max_selected_patterns": 8,
+    "excluded_suffix_actions": 1,
+    "max_candidates": 50000
+  },
+  "mining_diagnostics": {
+    "training_target_sequences": 129,
+    "training_control_sequences": 846,
+    "patterns_visited": 2574,
+    "target_closed_patterns": 2496,
+    "patterns_selected": 8,
+    "growth_rate_context_adjusted": true,
+    "shared_context_strata": 46,
+    "no_pattern_fallback": false
+  },
+  "body_predicate_count": 40,
+  "hybrid_vocabulary": {
+    "body_predicates": 40,
+    "base_predicates": 34,
+    "retained_base_predicates": 34,
+    "pattern_predicates": 6,
+    "pattern_component_predicates": [
+      "seq_central_long_carry",
+      "seq_dead_end_support",
+      "seq_diagonal_pass",
+      "seq_first_time_play",
+      "seq_flank_dribble",
+      "seq_line_pass",
+      "seq_rest_defence_exposed",
+      "seq_supported_action",
+      "seq_under_pressure"
+    ],
+    "max_vars": 2,
+    "max_body": 3,
+    "max_clauses": 4
+  },
+  "popper_max_body": 3,
+  "popper_max_vars": 2,
+  "popper_max_clauses": 4,
+  "search_space_proxy": {
+    "body_predicates": 40,
+    "max_body": 3,
+    "max_clauses": 4,
+    "unordered_clause_body_proxy": 10700,
+    "unordered_program_proxy": 546062969730825
+  },
+  "task_dir": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/prolog/popper_sequential",
+  "label_target": "negative outcome; non_negative is the control class",
+  "training_sampling": "phase-2 context-matched examples",
+  "body_predicates_given_to_popper": [
+    "seq_line_breaking_pass",
+    "seq_diagonal_pass",
+    "seq_switch_to_right",
+    "seq_switch_to_left",
+    "seq_long_pass",
+    "seq_pass_in_behind",
+    "seq_line_pass",
+    "seq_connecting_pass",
+    "seq_dropped_between_lines",
+    "seq_first_time_play",
+    "seq_dwelt_long",
+    "seq_supported_action",
+    "seq_dead_end_support",
+    "seq_press_resistance",
+    "seq_counter_pressed",
+    "seq_rest_defence_exposed",
+    "seq_under_pressure",
+    "seq_flank_line_carry",
+    "seq_flank_cut_inside",
+    "seq_flank_dribble",
+    "seq_central_long_carry",
+    "seq_central_take_on",
+    "seq_central_backward_pass",
+    "seq_flank_backward_carry",
+    "seq_central_switch",
+    "seq_recycle_to_same_flank",
+    "seq_center_cycling",
+    "seq_persistent_half_space_occupier",
+    "opponent_visible_majority",
+    "slow_sequence",
+    "fast_sequence",
+    "keeper_played_open_play",
+    "seq_pass_exchange",
+    "seq_flank_to_center",
+    "seq_pattern_01",
+    "seq_pattern_02",
+    "seq_pattern_03",
+    "seq_pattern_04",
+    "seq_pattern_05",
+    "seq_pattern_06"
+  ],
+  "learned_clauses": [
+    [
+      "seq_pattern_02"
+    ],
+    [
+      "seq_pattern_06"
+    ],
+    [
+      "seq_pattern_03"
+    ],
+    [
+      "seq_pattern_01"
+    ]
+  ],
+  "provisional": false,
+  "hard_timeout": false,
+  "training_output_is_not_heldout_quality_evidence": true,
+  "popper_log": "/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_training_popper_output.txt"
+}
+
+
+### Arm 3, step 3 of 3 — Evaluate hybrid miner + Popper
+ /content/football_tactical_ilp_project
+[run-log] live output is also saved to: /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv_run_20261013T190247Z.log
+Starting hybrid-pattern fold_01/3: 4 mined patterns + 34 retained base predicates, total=38, 600s Popper budget.
+Enforced maximum clauses per noisy hypothesis: 4
+6.7s Generating partial hypotheses of size: 2
+6.7s ********************
+6.7s New best hypothesis:
+6.7s tp:5 fn:97 tn:205 fp:1 size:2 mdl:100
+6.7s negative_outcome(V0):- seq_pattern_03(V0).
+6.7s ********************
+6.9s ********************
+6.9s New best hypothesis:
+6.9s tp:7 fn:95 tn:206 fp:0 size:2 mdl:97
+6.9s negative_outcome(V0):- seq_pattern_01(V0).
+6.9s ********************
+6.9s Generating partial hypotheses of size: 3
+6.9s ********************
+6.9s New best hypothesis:
+6.9s tp:12 fn:90 tn:205 fp:1 size:4 mdl:95
+6.9s negative_outcome(V0):- seq_pattern_01(V0).
+6.9s negative_outcome(V0):- seq_pattern_03(V0).
+6.9s ********************
+10.5s Generating partial hypotheses of size: 4
+10.5s ********************
+10.5s New best hypothesis:
+10.5s tp:21 fn:81 tn:200 fp:6 size:7 mdl:94
+10.5s negative_outcome(V0):- seq_pattern_01(V0).
+10.5s negative_outcome(V0):- seq_pattern_03(V0).
+10.5s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+10.5s ********************
+45.8s ********************
+45.8s New best hypothesis:
+45.8s tp:30 fn:72 tn:196 fp:10 size:11 mdl:93
+45.8s negative_outcome(V0):- seq_pattern_01(V0).
+45.8s negative_outcome(V0):- seq_pattern_03(V0).
+45.8s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+45.8s negative_outcome(V0):- seq_line_pass(V0),seq_first_time_play(V0),fast_sequence(V0).
+45.8s ********************
+45.9s ********** SOLUTION **********
+45.9s Precision:0.75 Recall:0.29 TP:30 FN:72 TN:196 FP:10 Size:11 MDL:93
+45.9s negative_outcome(V0):- seq_pattern_01(V0).
+45.9s negative_outcome(V0):- seq_pattern_03(V0).
+45.9s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+45.9s negative_outcome(V0):- seq_line_pass(V0),seq_first_time_play(V0),fast_sequence(V0).
+45.9s ******************************
+fold_01: patterns=4, support=69, precision=0.232, recall=0.219, lift=1.531, provisional=False, hard_timeout=False
+Starting hybrid-pattern fold_02/3: 4 mined patterns + 34 retained base predicates, total=38, 600s Popper budget.
+Enforced maximum clauses per noisy hypothesis: 4
+6.2s Generating partial hypotheses of size: 2
+6.2s ********************
+6.2s New best hypothesis:
+6.2s tp:6 fn:105 tn:228 fp:1 size:2 mdl:108
+6.2s negative_outcome(V0):- seq_pattern_02(V0).
+6.2s ********************
+6.2s ********************
+6.2s New best hypothesis:
+6.2s tp:7 fn:104 tn:228 fp:1 size:2 mdl:107
+6.2s negative_outcome(V0):- seq_pattern_01(V0).
+6.2s ********************
+6.3s Generating partial hypotheses of size: 3
+6.3s ********************
+6.3s New best hypothesis:
+6.3s tp:23 fn:88 tn:227 fp:2 size:8 mdl:98
+6.3s negative_outcome(V0):- seq_pattern_01(V0).
+6.3s negative_outcome(V0):- seq_pattern_04(V0).
+6.3s negative_outcome(V0):- seq_pattern_02(V0).
+6.3s negative_outcome(V0):- seq_pattern_03(V0).
+6.3s ********************
+7.8s Generating partial hypotheses of size: 4
+20.7s ********** SOLUTION **********
+20.7s Precision:0.92 Recall:0.21 TP:23 FN:88 TN:227 FP:2 Size:8 MDL:98
+20.7s negative_outcome(V0):- seq_pattern_01(V0).
+20.7s negative_outcome(V0):- seq_pattern_04(V0).
+20.7s negative_outcome(V0):- seq_pattern_02(V0).
+20.7s negative_outcome(V0):- seq_pattern_03(V0).
+20.7s ******************************
+fold_02: patterns=4, support=10, precision=0.300, recall=0.047, lift=2.105, provisional=False, hard_timeout=False
+Starting hybrid-pattern fold_03/3: 6 mined patterns + 34 retained base predicates, total=40, 600s Popper budget.
+Enforced maximum clauses per noisy hypothesis: 4
+6.6s Generating partial hypotheses of size: 2
+6.6s ********************
+6.6s New best hypothesis:
+6.6s tp:9 fn:128 tn:262 fp:3 size:2 mdl:133
+6.6s negative_outcome(V0):- seq_pattern_04(V0).
+6.6s ********************
+6.7s Generating partial hypotheses of size: 3
+6.7s ********************
+6.7s New best hypothesis:
+6.7s tp:26 fn:111 tn:261 fp:4 size:8 mdl:123
+6.7s negative_outcome(V0):- seq_pattern_02(V0).
+6.7s negative_outcome(V0):- seq_pattern_01(V0).
+6.7s negative_outcome(V0):- seq_pattern_04(V0).
+6.7s negative_outcome(V0):- seq_pattern_05(V0).
+6.7s ********************
+10.7s Generating partial hypotheses of size: 4
+55.8s ********** SOLUTION **********
+55.8s Precision:0.87 Recall:0.19 TP:26 FN:111 TN:261 FP:4 Size:8 MDL:123
+55.8s negative_outcome(V0):- seq_pattern_02(V0).
+55.8s negative_outcome(V0):- seq_pattern_01(V0).
+55.8s negative_outcome(V0):- seq_pattern_04(V0).
+55.8s negative_outcome(V0):- seq_pattern_05(V0).
+55.8s ******************************
+fold_03: patterns=6, support=20, precision=0.300, recall=0.158, lift=2.976, provisional=False, hard_timeout=False
+
+Detailed quality report -> /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv.json
+Readable report -> /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv.md
+[run-log] phase5_sequential_cv completed; elapsed=227.0s; log=/content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv_run_20261013T190247Z.log
+Hybrid ordered-pattern match-grouped CV
+Fold-local ordered combinations of action-level tactical predicates were mined from training matches. Each complete pattern is one atomic Popper feature. The complete revised base vocabulary remains available alongside patterns; same-clause pattern/component combinations are forbidden.
+
+Folds: 3; seed: 202021; Popper timeout/fold: 600 s.
+Held-out sequences: 1308; base rate: 0.134.
+Predicted support: 99 (TP=25, FP=74); precision: 0.253; recall: 0.143; lift: 1.887.
+Miner-only (OR of the same fold-local selected patterns; no Popper): support 59 (TP=16, FP=43); precision 0.271; recall 0.091; lift 2.027.
+Metrics pool all held-out matches across folds. Pattern mining and selection use training matches only; Popper training uses the project's context-matched sample.
+Pattern events come from the 27 currently active Popper action-level concepts; sequence summaries, player summaries, and absence complements are not treated as ordered events.
+This estimates internal match-grouped performance, not cross-season generalization.
+
+Fold details
+
+
+
+Fold
+Patterns selected
+Predicates offered
+Popper seconds
+Provisional
+Hard timeout
+Support
+Precision
+Recall
+Lift
+
+
+
+1
+4
+38
+46.3
+False
+False
+69
+0.232
+0.219
+1.531
+
+
+2
+4
+38
+21.1
+False
+False
+10
+0.300
+0.047
+2.105
+
+
+3
+6
+40
+56.2
+False
+False
+20
+0.300
+0.158
+2.976
+
+
+Selected fold-local patterns
+Fold 1
+
+seq_pattern_01: {tactical:connecting_pass@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@dribble@left_channel@defensive_third}; target support 7, control support 7, smoothed growth 3.19x (log2=1.67); target/control rates 18.4%/5.8%.
+seq_pattern_02: {tactical:connecting_pass@pass@central_channel@defensive_third} -> {tactical:supported_action@dribble@left_channel@defensive_third}; target support 7, control support 9, smoothed growth 3.11x (log2=1.63); target/control rates 18.4%/5.9%.
+seq_pattern_03: {tactical:line_pass@pass@right_channel@defensive_third} -> {tactical:flank_dribble@dribble@right_channel@defensive_third} -> {tactical:first_time_play@pass@right_channel@defensive_third}; target support 5, control support 1, smoothed growth 3.10x (log2=1.63); target/control rates 17.0%/5.5%.
+seq_pattern_04: {tactical:supported_action@dribble@left_channel@defensive_third} -> {tactical:connecting_pass@pass@left_channel@defensive_third} -> {tactical:under_pressure@dribble@left_channel@defensive_third}; target support 7, control support 9, smoothed growth 3.03x (log2=1.60); target/control rates 18.2%/6.0%.
+
+Fold 2
+
+seq_pattern_01: {tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:diagonal_pass@pass@left_channel@defensive_third} -> {tactical:flank_dribble@dribble@left_channel@defensive_third}; target support 7, control support 5, smoothed growth 3.59x (log2=1.85); target/control rates 18.4%/5.1%.
+seq_pattern_02: {tactical:supported_action@dribble@left_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@left_channel@defensive_third} -> {tactical:dead_end_support@dribble@left_channel@middle_third}; target support 6, control support 2, smoothed growth 3.58x (log2=1.84); target/control rates 17.5%/4.9%.
+seq_pattern_03: {tactical:first_time_play@pass@right_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@dribble@left_channel@defensive_third}; target support 5, control support 4, smoothed growth 3.54x (log2=1.83); target/control rates 17.4%/4.9%.
+seq_pattern_04: {tactical:line_pass@pass@right_channel@defensive_third} -> {tactical:first_time_play@pass@right_channel@defensive_third} -> {tactical:under_pressure@dribble@right_channel@defensive_third}; target support 6, control support 2, smoothed growth 3.52x (log2=1.82); target/control rates 17.2%/4.9%.
+
+Fold 3
+
+seq_pattern_01: {tactical:line_pass@pass@right_channel@defensive_third} -> {tactical:supported_action@pass@right_channel@defensive_third} -> {tactical:under_pressure@dribble@right_channel@defensive_third}; target support 6, control support 1, smoothed growth 3.28x (log2=1.71); target/control rates 15.1%/4.6%.
+seq_pattern_02: {tactical:rest_defence_exposed@pass@central_channel@defensive_third} -> {tactical:rest_defence_exposed@pass@left_channel@defensive_third} -> {tactical:under_pressure@dribble@left_channel@middle_third}; target support 7, control support 6, smoothed growth 3.19x (log2=1.67); target/control rates 15.7%/4.9%.
+seq_pattern_03: {tactical:under_pressure@dribble@right_channel@defensive_third} -> {tactical:under_pressure@pass@right_channel@defensive_third} -> {tactical:central_backward_pass@pass@right_channel@defensive_third}; target support 6, control support 2, smoothed growth 3.17x (log2=1.66); target/control rates 15.1%/4.8%.
+seq_pattern_04: {tactical:supported_action@dribble@left_channel@defensive_third} -> {tactical:connecting_pass@pass@left_channel@defensive_third} -> {tactical:under_pressure@dribble@left_channel@defensive_third}; target support 9, control support 9, smoothed growth 3.16x (log2=1.66); target/control rates 16.8%/5.3%.
+seq_pattern_05: {tactical:central_long_carry@dribble@left_channel@defensive_third} -> {tactical:under_pressure@pass@left_channel@defensive_third} -> {tactical:line_pass@pass@left_channel@defensive_third}; target support 7, control support 3, smoothed growth 3.15x (log2=1.65); target/control rates 15.4%/4.9%.
+seq_pattern_06: {tactical:rest_defence_exposed@pass@right_channel@defensive_third} -> {tactical:central_switch@pass@central_channel@defensive_third} -> {tactical:dead_end_support@pass@left_channel@defensive_third}; target support 5, control support 1, smoothed growth 3.14x (log2=1.65); target/control rates 14.5%/4.6%.
+
+Exploratory intermediate Popper candidates
+Exploratory only: many incumbent hypotheses were inspected and these same fold holdouts were used to rank them. Metrics are pooled only over folds where that candidate was discovered; do not treat them as an unbiased estimate. Confirm shortlisted candidates on new matches or a nested/fresh evaluation.
+
+
+
+Folds found
+Holdout support*
+Precision*
+Recall*
+Lift*
+Program
+
+
+
+1/3
+2
+0.500
+0.016
+3.508
+seq_pattern_02
+
+
+1/3
+20
+0.300
+0.158
+2.976
+seq_pattern_02seq_pattern_01seq_pattern_04seq_pattern_05
+
+
+1/3
+7
+0.286
+0.053
+2.835
+seq_pattern_04
+
+
+1/3
+5
+0.400
+0.031
+2.806
+seq_pattern_01
+
+
+1/3
+10
+0.300
+0.047
+2.105
+seq_pattern_01seq_pattern_04seq_pattern_02seq_pattern_03
+
+
+1/3
+8
+0.250
+0.027
+1.651
+seq_pattern_01
+
+
+1/3
+69
+0.232
+0.219
+1.531
+seq_pattern_01seq_pattern_03seq_central_backward_pass, fast_sequenceseq_line_pass, seq_first_time_play, fast_sequence
+
+
+1/3
+44
+0.205
+0.123
+1.351
+seq_pattern_01seq_pattern_03seq_central_backward_pass, fast_sequence
+
+
+1/3
+15
+0.200
+0.041
+1.321
+seq_pattern_01seq_pattern_03
+
+
+1/3
+7
+0.143
+0.014
+0.943
+seq_pattern_03
+
+
+*Candidate scores pool only folds where the candidate was discovered; use as a discovery shortlist, not a performance estimate.
+Individual clauses found inside intermediate hypotheses
+
+
+
+Folds found
+Holdout support*
+Precision*
+Recall*
+Lift*
+Clause
+
+
+
+1/3
+6
+0.500
+0.079
+4.961
+seq_pattern_02
+
+
+1/3
+4
+0.500
+0.053
+4.961
+seq_pattern_01
+
+
+1/3
+2
+0.500
+0.016
+3.508
+seq_pattern_02
+
+
+1/3
+7
+0.286
+0.053
+2.835
+seq_pattern_04
+
+
+1/3
+5
+0.400
+0.031
+2.806
+seq_pattern_01
+
+
+1/3
+5
+0.400
+0.031
+2.806
+seq_pattern_03
+
+
+1/3
+8
+0.250
+0.027
+1.651
+seq_pattern_01
+
+
+1/3
+43
+0.233
+0.137
+1.536
+seq_line_pass, seq_first_time_play, fast_sequence
+
+
+1/3
+29
+0.207
+0.082
+1.366
+seq_central_backward_pass, fast_sequence
+
+
+1/3
+7
+0.143
+0.014
+0.943
+seq_pattern_03
+
+
+1/3
+5
+0.000
+0.000
+0.000
+seq_pattern_05
+
+
+1/3
+1
+0.000
+0.000
+0.000
+seq_pattern_04
+
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv/fold_01_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+6.7s Generating partial hypotheses of size: 2
+6.7s ********************
+6.7s New best hypothesis:
+6.7s tp:5 fn:97 tn:205 fp:1 size:2 mdl:100
+6.7s negative_outcome(V0):- seq_pattern_03(V0).
+6.7s ********************
+6.9s ********************
+6.9s New best hypothesis:
+6.9s tp:7 fn:95 tn:206 fp:0 size:2 mdl:97
+6.9s negative_outcome(V0):- seq_pattern_01(V0).
+6.9s ********************
+6.9s Generating partial hypotheses of size: 3
+6.9s ********************
+6.9s New best hypothesis:
+6.9s tp:12 fn:90 tn:205 fp:1 size:4 mdl:95
+6.9s negative_outcome(V0):- seq_pattern_01(V0).
+6.9s negative_outcome(V0):- seq_pattern_03(V0).
+6.9s ********************
+10.5s Generating partial hypotheses of size: 4
+10.5s ********************
+10.5s New best hypothesis:
+10.5s tp:21 fn:81 tn:200 fp:6 size:7 mdl:94
+10.5s negative_outcome(V0):- seq_pattern_01(V0).
+10.5s negative_outcome(V0):- seq_pattern_03(V0).
+10.5s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+10.5s ********************
+45.8s ********************
+45.8s New best hypothesis:
+45.8s tp:30 fn:72 tn:196 fp:10 size:11 mdl:93
+45.8s negative_outcome(V0):- seq_pattern_01(V0).
+45.8s negative_outcome(V0):- seq_pattern_03(V0).
+45.8s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+45.8s negative_outcome(V0):- seq_line_pass(V0),seq_first_time_play(V0),fast_sequence(V0).
+45.8s ********************
+45.9s ********** SOLUTION **********
+45.9s Precision:0.75 Recall:0.29 TP:30 FN:72 TN:196 FP:10 Size:11 MDL:93
+45.9s negative_outcome(V0):- seq_pattern_01(V0).
+45.9s negative_outcome(V0):- seq_pattern_03(V0).
+45.9s negative_outcome(V0):- seq_central_backward_pass(V0),fast_sequence(V0).
+45.9s negative_outcome(V0):- seq_line_pass(V0),seq_first_time_play(V0),fast_sequence(V0).
+45.9s ******************************
+
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv/fold_02_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+6.2s Generating partial hypotheses of size: 2
+6.2s ********************
+6.2s New best hypothesis:
+6.2s tp:6 fn:105 tn:228 fp:1 size:2 mdl:108
+6.2s negative_outcome(V0):- seq_pattern_02(V0).
+6.2s ********************
+6.2s ********************
+6.2s New best hypothesis:
+6.2s tp:7 fn:104 tn:228 fp:1 size:2 mdl:107
+6.2s negative_outcome(V0):- seq_pattern_01(V0).
+6.2s ********************
+6.3s Generating partial hypotheses of size: 3
+6.3s ********************
+6.3s New best hypothesis:
+6.3s tp:23 fn:88 tn:227 fp:2 size:8 mdl:98
+6.3s negative_outcome(V0):- seq_pattern_01(V0).
+6.3s negative_outcome(V0):- seq_pattern_04(V0).
+6.3s negative_outcome(V0):- seq_pattern_02(V0).
+6.3s negative_outcome(V0):- seq_pattern_03(V0).
+6.3s ********************
+7.8s Generating partial hypotheses of size: 4
+20.7s ********** SOLUTION **********
+20.7s Precision:0.92 Recall:0.21 TP:23 FN:88 TN:227 FP:2 Size:8 MDL:98
+20.7s negative_outcome(V0):- seq_pattern_01(V0).
+20.7s negative_outcome(V0):- seq_pattern_04(V0).
+20.7s negative_outcome(V0):- seq_pattern_02(V0).
+20.7s negative_outcome(V0):- seq_pattern_03(V0).
+20.7s ******************************
+
+
+--- /content/football_tactical_ilp_project/data/team_runs/barcelona_2020_21/reports/phase5_sequential_cv/fold_03_popper_output.txt ---
+Enforced maximum clauses per noisy hypothesis: 4
+6.6s Generating partial hypotheses of size: 2
+6.6s ********************
+6.6s New best hypothesis:
+6.6s tp:9 fn:128 tn:262 fp:3 size:2 mdl:133
+6.6s negative_outcome(V0):- seq_pattern_04(V0).
+6.6s ********************
+6.7s Generating partial hypotheses of size: 3
+6.7s ********************
+6.7s New best hypothesis:
+6.7s tp:26 fn:111 tn:261 fp:4 size:8 mdl:123
+6.7s negative_outcome(V0):- seq_pattern_02(V0).
+6.7s negative_outcome(V0):- seq_pattern_01(V0).
+6.7s negative_outcome(V0):- seq_pattern_04(V0).
+6.7s negative_outcome(V0):- seq_pattern_05(V0).
+6.7s ********************
+10.7s Generating partial hypotheses of size: 4
+55.8s ********** SOLUTION **********
+55.8s Precision:0.87 Recall:0.19 TP:26 FN:111 TN:261 FP:4 Size:8 MDL:123
+55.8s negative_outcome(V0):- seq_pattern_02(V0).
+55.8s negative_outcome(V0):- seq_pattern_01(V0).
+55.8s negative_outcome(V0):- seq_pattern_04(V0).
+55.8s negative_outcome(V0):- seq_pattern_05(V0).
+55.8s ******************************
+
+
+### Arm 2 — Classical baseline: shallow decision tree
+/content/football_tactical_ilp_project
+{
+  "n_positive": 175,
+  "n_negative": 1133,
+  "tp": 30,
+  "fp": 126,
+  "fn": 145,
+  "tn": 1007,
+  "accuracy": 0.7928134556574924,
+  "precision": 0.19230769230769232,
+  "recall": 0.17142857142857143,
+  "specificity": 0.8887908208296558,
+  "f1": 0.18126888217522658,
+  "balanced_accuracy": 0.5301096961291136,
+  "mcc": 0.06325309911040763
+}
+
+--- Fold 1 decision tree ---
+if seq_diagonal_pass is present:
+  if seq_dropped_between_lines is present:
+    if opponent_visible_majority is present:
+      leaf: non-negative (n=25, negative=0, non_negative=25)
+    else:
+      leaf: non-negative (n=30, negative=2, non_negative=28)
+  else:
+    if seq_central_long_carry is present:
+      leaf: non-negative (n=91, negative=21, non_negative=70)
+    else:
+      leaf: negative outcome (n=27, negative=14, non_negative=13)
+else:
+  if seq_line_breaking_pass is present:
+    leaf: non-negative (n=12, negative=1, non_negative=11)
+  else:
+    if seq_first_time_play is present:
+      leaf: negative outcome (n=46, negative=33, non_negative=13)
+    else:
+      leaf: non-negative (n=77, negative=31, non_negative=46)
+
+--- Fold 2 decision tree ---
+if seq_line_breaking_pass is present:
+  leaf: non-negative (n=51, negative=0, non_negative=51)
+else:
+  if seq_flank_cut_inside is present:
+    if seq_persistent_half_space_occupier is present:
+      leaf: non-negative (n=27, negative=2, non_negative=25)
+    else:
+      leaf: non-negative (n=10, negative=4, non_negative=6)
+  else:
+    if keeper_played_open_play is present:
+      leaf: negative outcome (n=57, negative=31, non_negative=26)
+    else:
+      leaf: non-negative (n=195, negative=74, non_negative=121)
+
+--- Fold 3 decision tree ---
+if seq_line_breaking_pass is present:
+  if seq_diagonal_pass is present:
+    leaf: non-negative (n=50, negative=0, non_negative=50)
+  else:
+    leaf: non-negative (n=13, negative=1, non_negative=12)
+else:
+  if opponent_visible_majority is present:
+    if seq_flank_line_carry is present:
+      leaf: non-negative (n=10, negative=2, non_negative=8)
+    else:
+      leaf: non-negative (n=28, negative=1, non_negative=27)
+  else:
+    if seq_dropped_between_lines is present:
+      leaf: non-negative (n=46, negative=12, non_negative=34)
+    else:
+      leaf: non-negative (n=255, negative=121, non_negative=134)
+
+
+
+# مقایسهٔ روش‌های فاز ۵
+
+وضعیت مقایسهٔ سه بازوی اصلی: **آماده** (پروتکل `phase5-three-primary-arms-v16-shared-test-population-hash`).
+
+معیارها از پیش‌بینی‌های out-of-fold تجمیع‌شده روی مسابقه‌های آزمون و با شیوع طبیعی پیامد محاسبه می‌شوند. این گزارش توصیفی است؛ با یک اجرای سه‌fold به‌تنهایی ادعای معناداری آماری یا تعمیم به فصل دیگر مطرح نمی‌شود.
+
+| روش اصلی | OOF N | TP / FP / FN / TN | Support | Precision | Recall | Specificity | F1 | Lift | Balanced accuracy | MCC | وضعیت |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+
+| ماینر تنها (OR الگوهای fold-local) | 1308 | 16 / 43 / 159 / 1090 | 59 | 0.271 | 0.091 | 0.962 | 0.137 | 2.027 | 0.527 | 0.088 | OR of fold-local mined patterns; no Popper |
+| درخت تصمیم CART | 1308 | 30 / 126 / 145 / 1007 | 156 | 0.192 | 0.171 | 0.889 | 0.181 | 1.437 | 0.530 | 0.063 | Depth-3 CART (OOF balanced accuracy: 0.530) |
+| هیبرید ماینر + Popper | 1308 | 25 / 74 / 150 / 1059 | 99 | 0.253 | 0.143 | 0.935 | 0.182 | 1.887 | 0.539 | 0.100 | 4-clause sequential program (OOF Precision: 25%, OOF Lift: 1.89x) |
+
+هم‌ترازی foldهای سه روش اصلی: **matched**.
+همسانی دقیق مسابقه‌ها، توالی‌ها و برچسب‌های آزمون (SHA-256 هر fold): **matched**.
+بازوی صفرم (`full_tactical` Popper، خارج از مقایسهٔ اصلی): No stable tactical program found (MDL prune / NO SOLUTION).
+

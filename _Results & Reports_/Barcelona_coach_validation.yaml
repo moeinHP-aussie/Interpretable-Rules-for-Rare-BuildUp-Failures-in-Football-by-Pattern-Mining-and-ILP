@@ -1,0 +1,253 @@
+{
+  "source_method": "hybrid_sequential",
+  "source_fingerprint": "668193f75519232b52e9",
+  "instructions": "برای هر قانون: validation_status را به approved یا rejected تغییر دهید. نوشتن validation_note اختیاری است. قانون‌هایی که flags.holdout_confidence_collapsed=true دارند احتمالاً باید rejected شوند مگر دلیل قانع‌کننده‌ای برای نگه‌داشتنشان داشته باشید.",
+  "candidate_selection_warning": "قواعد با category=intermediate_candidate از نامزدهای میان‌مرحله‌ای CV انتخاب شده‌اند. کاندیداهای الگوی فولد نیز فقط در صورت وجود همتای معنایی دقیق در واژگان مدل نهایی وارد می‌شوند. امتیازهای holdout/test گزارش CV برای رتبه‌بندی استفاده شده‌اند و selection-biased هستند، نه برآورد مستقل؛ امتیاز Phase 6 نیز به‌تنهایی جای ارزیابی روی مسابقات تازه را نمی‌گیرد.",
+  "candidate_selection_warning_en": "Intermediate candidates are ranked using reported CV holdout/test evidence; this selection is biased and is not an independent estimate. Fold-local patterns are included only when their ordered signature matches the final vocabulary. Phase 6 scores are for review and do not replace evaluation on new matches.",
+  "rules": [
+    {
+      "name": "current_popper_1",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_02(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 11,
+          "confidence": 0.8182,
+          "lift": 2.4672
+        },
+        "holdout": {
+          "support": 1,
+          "confidence": 1,
+          "lift": 2.9565
+        },
+        "holdout_drop_ratio": -0.2222
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "تایید مشروط / نیازمند داده بیشتر. گام ها نشان دهنده ثبت اکشن توسط توسط مدافعان یا هافبک دفاعی هست برای همینه پشتشون بازیکن دیگری نیست. تفاسیر نشاندهنده تصمیم اشتباه بازیکن کناری برای دریبل در یکسوم دفاعی خودی در زمانی که بدلیل فشار حریف در عرض صورت میگیرد."
+    },
+    {
+      "name": "current_popper_2",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_06(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 6,
+          "confidence": 0.8333,
+          "lift": 2.5129
+        },
+        "holdout": {
+          "support": 2,
+          "confidence": 0.5,
+          "lift": 1.4783
+        },
+        "holdout_drop_ratio": 0.4
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "rejected",
+      "validation_note": "تعداد رخداد کمه و نمیشه نظر قطعی داد. اما  بازم مشکل در کانال چپ تیم کاملا مشهوده چون چندین قانون هرچند با تعداد کم اما همه اونها ارجاع به کانال چپ تیم دارند.  واضحا تیم در دفاع چپ و بازیکنان کانال چپ مِن جمله دفاع چپ مشکل تصمیم گیری صحیح دارد."
+    },
+    {
+      "name": "current_popper_3",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_03(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 6,
+          "confidence": 0.8333,
+          "lift": 2.5129
+        },
+        "holdout": {
+          "support": 1,
+          "confidence": 1,
+          "lift": 2.9565
+        },
+        "holdout_drop_ratio": -0.2
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "نیاز به داده بیشتر استثناعا مشروط تایید میکنم.اما مفهوم جالب است.بازیکن عقب زمین یا هافبک عقب کشیده یا احتمال زیاد مدافع چپ دریبل/حمل توپ انجام میده و حمل توپ باعث فشار بیشتر دفاعی حریف روی توپ و باریکنان میشه و با اینحال بازیکن پاس رو به سمت موافق خودش میده که همین باعث فشار تیم حریف و بلاک کردن تمام مسیر های پاس نزدیک به بازیکن صاحب توپ میشه."
+    },
+    {
+      "name": "current_popper_4",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_01(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 13,
+          "confidence": 0.8462,
+          "lift": 2.5516
+        },
+        "holdout": {
+          "support": 5,
+          "confidence": 0.6,
+          "lift": 1.7739
+        },
+        "holdout_drop_ratio": 0.2909
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "تله پرس کناره خط (Touchline Trap): پاس طولی در امتداد خط طولی راست، گیرنده را با بدنی رو به خط طولی یا دروازه خودی مواجه می‌کند. خط طولی زمین عملاً مثل یک مدافع اضافی برای حریف عمل می‌کند.اجبار به بازی زیر نیم ثانیه: اینکه بازیکن کمتر از ۰.۵ ثانیه توپ را نگه داشته نشان‌دهنده یک «پاس تک‌ضرب برنامه‌ریزی‌شده و تمیز» نیست؛ بلکه در یک‌سوم دفاعی یعنی گیرنده زیر فشار شدید بوده و برای نجات از پرس فوراً توپ را رها کرده است. پاس دوم در همان کانال بسته ارسال می‌شود که در ۶۰٪ مواقع در بازی‌های ندیده‌شده به قطع توپ حریف ختم شده است.   کفایت آماری: ثبت ۵ نمونه واقعی در ۹ مسابقه هلدآوت با برتری ۱.۷۷ برابری نسبت به شانس، به مربی اطمینان می‌دهد که این یک آسیب‌پذیری واقعی در چرخش بازی از سمت راست است."
+    },
+    {
+      "name": "intermediate_candidate_2",
+      "source": "fold_local_pattern_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_pattern_05(S)",
+      "candidate_metrics": {
+        "support": 5,
+        "lift": 2.80625,
+        "precision": 0.4,
+        "folds_found": 1
+      },
+      "discovery_fold": "2",
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 9,
+          "confidence": 0.8889,
+          "lift": 2.6804
+        },
+        "holdout": {
+          "support": 2,
+          "confidence": 0.5,
+          "lift": 1.4783
+        },
+        "holdout_drop_ratio": 0.4375
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "rejected",
+      "validation_note": "اینکه دقیقا در قوانین اصلی بوده دیگه لازم نیست این یکی رو هم تایید کنیم."
+    },
+    {
+      "name": "intermediate_candidate_3",
+      "source": "cv_intermediate_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_line_pass(S), seq_first_time_play(S), fast_sequence(S)",
+      "candidate_metrics": {
+        "support": 43,
+        "lift": 1.535521,
+        "precision": 0.232558,
+        "folds_found": 1
+      },
+      "discovery_fold": "1",
+      "human_readable": "در این توالی: یک پاس موازی خط کناری داده شده است؛ و حداقل یک بار اکشن با نگه‌داری توپِ حداکثر ۰٫۵ ثانیه ثبت شده است؛ و ریتم سکانس در دهک سریع‌ترین سکانس‌ها قرار داشته است.",
+      "metrics": {
+        "train": {
+          "support": 31,
+          "confidence": 0.5484,
+          "lift": 1.6537
+        },
+        "holdout": {
+          "support": 13,
+          "confidence": 0.5385,
+          "lift": 1.592
+        },
+        "holdout_drop_ratio": 0.0181
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "تعداد نمونه مناسب با وجود دقت پایین تر اما مفهوم دارد. بارسلونا تیمی است که هویتش بر «مکث، کنترل ریتم و تغییر زاویه» استوار است. وقتی سرعت بازی به به 3 دهک بالایی می‌رسد  و تیم به پاس‌های مستقیم لب خط و ضربه‌های اول زیر نیم ثانیه متوسل می‌شود، یعنی کنترل بازی از دست رفته است. در بیش از نیمی از موارد در طول کل فصل، این آشفتگی به واگذاری توپ در نیمه خودی انجامیده است. تیم در بازی در سرعت بالا ضعف دارد و تصمیمات درست یا حمایت های  سریع صورت نمیگیرد احتمالا"
+    },
+    {
+      "name": "intermediate_candidate_4",
+      "source": "cv_intermediate_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_central_backward_pass(S), fast_sequence(S)",
+      "candidate_metrics": {
+        "support": 29,
+        "lift": 1.366084,
+        "precision": 0.206897,
+        "folds_found": 1
+      },
+      "discovery_fold": "1",
+      "human_readable": "در این توالی: پاسی از یکی از سه lane غیرکناری با طول حداقل ۷ متر و جابه‌جایی رو به عقب حداقل ۵ متر ثبت شده است؛ و ریتم سکانس در دهک سریع‌ترین سکانس‌ها قرار داشته است.",
+      "metrics": {
+        "train": {
+          "support": 20,
+          "confidence": 0.55,
+          "lift": 1.6585
+        },
+        "holdout": {
+          "support": 9,
+          "confidence": 0.4444,
+          "lift": 1.314
+        },
+        "holdout_drop_ratio": 0.192
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "تایید مشروط: هدف از افزایش سرعت بازی برای پیشروی و جا ماندن مدافعان حریفه وقتی مجبور به بازی رو به عقب شدیم یعنی تیم کنترل بازی رو از دست  داده و سعی در کاهش فشار بازی با پاس رو عقب دارد. نکته احتیاطی: لیفت ۱.۳۱ در هلدآوت نشان می‌دهد که این رفتار همیشه فاجعه‌بار نیست و در ۴۴٪ موارد منجر به لو رفتن شده است؛ یعنی نیمی از اوقات پاس عقب توانسته فشار را تخلیه کند. اما به عنوان یک هشدار تاکتیکی («پاس عقب بلند در ریتم تند ریسک بالایی دارد») معتبر است."
+    },
+    {
+      "name": "intermediate_candidate_5",
+      "source": "fold_local_pattern_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_pattern_04(S)",
+      "candidate_metrics": {
+        "support": null,
+        "lift": null,
+        "precision": null,
+        "evidence_status": "no_usable_cv_holdout_metrics"
+      },
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 7,
+          "confidence": 0.7143,
+          "lift": 2.1539
+        },
+        "holdout": {
+          "support": 1,
+          "confidence": 0,
+          "lift": 0
+        },
+        "holdout_drop_ratio": 1
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": true
+      },
+      "validation_status": "rejected",
+      "validation_note": "داده کم. اما بازم مربوط به کانال چپ. همانطور که گفتم تیم بارسلونا در این فصل در این کانال مشکل داشته در فاز بازسازی در یک سوم دفاعی. مشکل باید به مدافع چپ و فولبک چپ بیشتر مربوط باشه"
+    }
+  ]
+}

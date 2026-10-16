@@ -1,0 +1,126 @@
+{
+  "source_method": "hybrid_sequential",
+  "source_fingerprint": "84a9fd96a06da4202948",
+  "instructions": "برای هر قانون: validation_status را به approved یا rejected تغییر دهید. نوشتن validation_note اختیاری است. قانون‌هایی که flags.holdout_confidence_collapsed=true دارند احتمالاً باید rejected شوند مگر دلیل قانع‌کننده‌ای برای نگه‌داشتنشان داشته باشید.",
+  "candidate_selection_warning": "قواعد با category=intermediate_candidate از نامزدهای میان‌مرحله‌ای CV انتخاب شده‌اند. کاندیداهای الگوی فولد نیز فقط در صورت وجود همتای معنایی دقیق در واژگان مدل نهایی وارد می‌شوند. امتیازهای holdout/test گزارش CV برای رتبه‌بندی استفاده شده‌اند و selection-biased هستند، نه برآورد مستقل؛ امتیاز Phase 6 نیز به‌تنهایی جای ارزیابی روی مسابقات تازه را نمی‌گیرد.",
+  "candidate_selection_warning_en": "Intermediate candidates are ranked using reported CV holdout/test evidence; this selection is biased and is not an independent estimate. Fold-local patterns are included only when their ordered signature matches the final vocabulary. Phase 6 scores are for review and do not replace evaluation on new matches.",
+  "rules": [
+    {
+      "name": "current_popper_1",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_01(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 8,
+          "confidence": 1,
+          "lift": 2.8777
+        },
+        "holdout": {
+          "support": 1,
+          "confidence": 1,
+          "lift": 3.4474
+        },
+        "holdout_drop_ratio": 0
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "تایید مشروط.اگر بازیکنی در کانال راست یک‌سوم دفاعی زیر فشار حمل توپ (دریبل در اینجا منظور برداشتن یک به یک نیست) و سپس در فقدان گزینه‌های پاس باز (dead_end_support) اصرار به دریبل دوم داشته باشد، نشان از تصمیم غلط در حمل توپ اول دارد و بازیکن  کار اضافی انجام داده است. احتمالا باید این مشکل مربوط به بازیکن خاصی باشد(این مدل الگوها چنینند) و برای همین تعداد خیلی کمی داره اما دقت خیلی بالاست.\n به دلیل ساپورت پایین در هلدآوت، این قاعده به عنوان یک سناریوی پرریسک حاد با نیاز به پایش بیشتر پذیرفته می‌شود."
+    },
+    {
+      "name": "current_popper_2",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_flank_backward_carry(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "در این توالی: حمل توپ در همان lane کناری دست‌کم ۴ متر رو به عقب انجام شده است.",
+      "metrics": {
+        "train": {
+          "support": 34,
+          "confidence": 0.6176,
+          "lift": 1.7774
+        },
+        "holdout": {
+          "support": 10,
+          "confidence": 0.6,
+          "lift": 2.0684
+        },
+        "holdout_drop_ratio": 0.0285
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": false
+      },
+      "validation_status": "approved",
+      "validation_note": "ثبات آماری در داده‌های آموزش (دقت ۶۱.۸٪، ساپورت ۳۴) و هلدآوت (دقت ۶۰.۰٪، ساپورت ۱۰، لیفت ۲.۰۷) نشان‌دهنده یک الگوی تکرارشونده واقعی است. از منظر تاکتیکی سیستم $3-4-2-1$ ژابی آلونسو، وینگ‌بک‌ها لب خط در وضعیت تحت فشار اگر زاویه پاس رو به جلو یا متمایل به مرکز را بسته ببینند و ناچار شوند بیش از ۴ متر به سمت دروازه خودی در امتداد خط طولی عقب‌نشینی کنند، زاویه خط اوت به سود پرس حریف عمل کرده و این تصمیم در ۶۰٪ مواقع به واگذاری مالکیت در نیمه خودی انجامیده است. این قاعده در هر دو جناح (راست و چپ) تعمیم‌پذیر است. در فوتبال حرفه ای حمل توپ بلند به سمت دروازه خودی در کانال های کناری جزو بدترین انتخاب های ممکن است"
+    },
+    {
+      "name": "current_popper_3",
+      "source": "hybrid_sequential",
+      "category": "primary",
+      "prolog_body": "seq_pattern_02(S)",
+      "candidate_metrics": null,
+      "discovery_fold": null,
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 7,
+          "confidence": 1,
+          "lift": 2.8777
+        },
+        "holdout": {
+          "support": 0,
+          "confidence": 0,
+          "lift": 0
+        },
+        "holdout_drop_ratio": 1
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": true
+      },
+      "validation_status": "rejected",
+      "validation_note": "رد قاعده، ارتقا به بینش ساختاری. اما جالب توجه هست که مشابه قانون قبلی بر جناح راست اشاره دارد. اسیب پذیری تیم در فاز بازیسازی در جناح راست بیشتر است! \nاما مفهوم زیربنایی آن معتبر است: پس از پاس طولی لب خط راست، اگر خط دفاعی لورکوزن جلو کشیده و دفاع محافظ پشت توپ خالی شده باشد (rest_defence_exposed)، اقدام به دریبل فردی پرخطر است."
+    },
+    {
+      "name": "intermediate_candidate_2",
+      "source": "fold_local_pattern_candidate",
+      "category": "intermediate_candidate",
+      "prolog_body": "seq_pattern_03(S)",
+      "candidate_metrics": {
+        "support": 4,
+        "lift": 2.634615,
+        "precision": 0.5,
+        "folds_found": 1
+      },
+      "discovery_fold": "3",
+      "human_readable": "این قانون با وقوع الگوی ترتیبیِ شرح‌داده‌شده در سکانس برقرار می‌شود.",
+      "metrics": {
+        "train": {
+          "support": 12,
+          "confidence": 0.8333,
+          "lift": 2.3981
+        },
+        "holdout": {
+          "support": 0,
+          "confidence": 0,
+          "lift": 0
+        },
+        "holdout_drop_ratio": 1
+      },
+      "flags": {
+        "low_support": false,
+        "holdout_confidence_collapsed": true
+      },
+      "validation_status": "rejected",
+      "validation_note": "رد قاعده، ارتقا به بینش ساختاری. بدلیل تعداد تکرار کم تایید نمیکنم اما همچنان مهر تاییدیست بر این موضوع که اسیب پذیری کانال راست بیشتر است و همینطور میل به دریبل زنی خطرناک"
+    }
+  ]
+}
