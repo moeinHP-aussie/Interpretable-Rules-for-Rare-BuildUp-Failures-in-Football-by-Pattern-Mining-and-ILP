@@ -1,0 +1,67 @@
+team_season,match_id,cv_fold,coach_review_split
+Barcelona 2020/21,3773372,1,train
+Barcelona 2020/21,3773387,1,train
+Barcelona 2020/21,3773474,1,train
+Barcelona 2020/21,3773477,1,train
+Barcelona 2020/21,3773523,1,train
+Barcelona 2020/21,3773547,1,review_holdout
+Barcelona 2020/21,3773585,1,review_holdout
+Barcelona 2020/21,3773593,1,train
+Barcelona 2020/21,3773625,1,train
+Barcelona 2020/21,3773661,1,review_holdout
+Barcelona 2020/21,3773665,1,train
+Barcelona 2020/21,3773672,1,train
+Barcelona 2020/21,3773377,2,review_holdout
+Barcelona 2020/21,3773428,2,train
+Barcelona 2020/21,3773466,2,review_holdout
+Barcelona 2020/21,3773497,2,review_holdout
+Barcelona 2020/21,3773552,2,train
+Barcelona 2020/21,3773565,2,train
+Barcelona 2020/21,3773571,2,train
+Barcelona 2020/21,3773586,2,train
+Barcelona 2020/21,3773597,2,train
+Barcelona 2020/21,3773631,2,train
+Barcelona 2020/21,3773689,2,train
+Barcelona 2020/21,3773695,2,review_holdout
+Barcelona 2020/21,3764440,3,train
+Barcelona 2020/21,3764661,3,train
+Barcelona 2020/21,3773369,3,review_holdout
+Barcelona 2020/21,3773386,3,train
+Barcelona 2020/21,3773403,3,train
+Barcelona 2020/21,3773415,3,train
+Barcelona 2020/21,3773457,3,review_holdout
+Barcelona 2020/21,3773526,3,train
+Barcelona 2020/21,3773587,3,train
+Barcelona 2020/21,3773656,3,train
+Barcelona 2020/21,3773660,3,train
+Bayer Leverkusen 2023/24,3895086,1,train
+Bayer Leverkusen 2023/24,3895095,1,review_holdout
+Bayer Leverkusen 2023/24,3895107,1,train
+Bayer Leverkusen 2023/24,3895113,1,review_holdout
+Bayer Leverkusen 2023/24,3895121,1,train
+Bayer Leverkusen 2023/24,3895180,1,train
+Bayer Leverkusen 2023/24,3895244,1,train
+Bayer Leverkusen 2023/24,3895250,1,train
+Bayer Leverkusen 2023/24,3895292,1,review_holdout
+Bayer Leverkusen 2023/24,3895302,1,train
+Bayer Leverkusen 2023/24,3895320,1,review_holdout
+Bayer Leverkusen 2023/24,3895052,2,train
+Bayer Leverkusen 2023/24,3895060,2,train
+Bayer Leverkusen 2023/24,3895153,2,train
+Bayer Leverkusen 2023/24,3895167,2,train
+Bayer Leverkusen 2023/24,3895202,2,train
+Bayer Leverkusen 2023/24,3895210,2,train
+Bayer Leverkusen 2023/24,3895258,2,review_holdout
+Bayer Leverkusen 2023/24,3895275,2,train
+Bayer Leverkusen 2023/24,3895286,2,train
+Bayer Leverkusen 2023/24,3895067,3,review_holdout
+Bayer Leverkusen 2023/24,3895074,3,train
+Bayer Leverkusen 2023/24,3895134,3,train
+Bayer Leverkusen 2023/24,3895139,3,train
+Bayer Leverkusen 2023/24,3895182,3,review_holdout
+Bayer Leverkusen 2023/24,3895194,3,train
+Bayer Leverkusen 2023/24,3895220,3,train
+Bayer Leverkusen 2023/24,3895232,3,train
+Bayer Leverkusen 2023/24,3895333,3,train
+Bayer Leverkusen 2023/24,3895340,3,train
+Bayer Leverkusen 2023/24,3895348,3,review_holdout
