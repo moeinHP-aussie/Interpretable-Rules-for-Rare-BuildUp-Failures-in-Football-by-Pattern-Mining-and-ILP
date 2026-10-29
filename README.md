@@ -9,7 +9,8 @@
 [![Data Source](https://img.shields.io/badge/Data-StatsBomb%20360-red.svg)](https://github.com/statsbomb/open-data)
 
 </div>
-
+---
+  [📄Download Paper: Interpretable Rules for Rare Build-Up Failures in Football (Soccer): Sequential Pattern Mining Meets Inductive Logic Programming](Interpretable%20Rules%20for%20Rare%20Build-Up%20Failures%20in%20Football.pdf)
 ---
 
 ## 📌 Overview
