@@ -11,7 +11,7 @@
 </div>
 
 ---
-Paper: Interpretable Rules for Rare Build-Up Failures in Football.pdf
+
 ## 📌 Overview
 
 Rare but costly build-up failures in football are difficult to detect during routine video review because each configuration may occur only a few times across an entire season.
